@@ -77,7 +77,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Megami_db', #　作成したデータベース名
-        'USER': 'root', # ログインユーザー名
+        'USER': 'root','ylim01' # ログインユーザー名
         'HOST': '',
         'PORT': '',
     }
