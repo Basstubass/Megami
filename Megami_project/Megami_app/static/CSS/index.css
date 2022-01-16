@@ -1,0 +1,322 @@
+
+/* 480px〜599px：SP横
+------------------------------ */
+@media screen and (min-width:480px) and (max-width:599px) { 
+    
+   }
+     
+   /* 600px〜959px：タブレット
+   ------------------------------ */
+   @media screen and (min-width:600px) and (max-width:959px) {
+    
+   }
+     
+   /* 960px〜1279px：小型PC
+   ------------------------------ */
+   @media screen and (min-width:960px) and (max-width:1080px) {
+   
+   }
+     
+   /* 1280px〜：大型PC
+   ------------------------------ */
+   @media screen and (min-width:1080px) {
+    body{
+        margin: 0;
+        padding: 0;
+        max-width: 1080px;
+        margin-left:auto;    /* 左側マージンを自動的に空ける */
+        margin-right:auto;   /* 右側マージンを自動的に空ける */     /* 中身を左側表示に戻す */
+    }
+    .header{
+        height: 550px;
+        max-width: 1080px;
+        background-color: #FFA500;
+    }
+    .header-item{
+        float: left;
+    }
+    .megami-logo{
+        margin: 0;
+        padding-top: 30px;
+        padding-left: 7%;
+        font-family: 'Quattrocento', serif;
+        font-size: 25px;
+        /* position: relative; */
+    }
+    .signin-button{
+        padding-top: 20px;
+        position: relative;
+        left: 70%;
+    }
+    
+    .login-btn {
+        outline: none;
+        cursor: pointer;
+        border: none;
+        padding: 0.9rem 2rem;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.05rem;
+        border-radius: 500px;
+        overflow: hidden;
+        background: #66ff66;
+        color: ghostwhite;
+       }
+       
+       .login-btn span {
+        position: relative;
+        z-index: 10;
+        transition: color 0.4s;
+       }
+       
+       .login-btn:hover span {
+        color: black;
+       }
+       
+       .login-btn::before,
+       .login-btn::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+       }
+       
+       .login-btn::before {
+        content: "";
+        background: #000;
+        width: 120%;
+        left: -10%;
+        transform: skew(30deg);
+        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+       }
+       
+       .login-btn:hover::before {
+        transform: translate3d(100%, 0, 0);
+       }
+       .signin-message{
+           padding-top: 19%;
+       }
+       .audience-area{
+        padding-left: 10%;
+       }
+       .signin-message{
+        font-family: 'PT Serif', serif;
+        font-size: 25px;
+        width: 400px;
+       }
+       #connect-message{
+           margin: 0;
+       }
+
+       #using-message{
+           margin: 0;
+           margin-left: 15%;
+       }
+       .btn{
+           margin-top: 13%;
+       }
+       #Megami_img{
+           position: absolute;
+           width: 400px;
+       }
+       #JK_img{
+           position: absolute;
+           width: 300px;
+           padding-top: 10%;
+           margin-left: 35%;
+       }
+       .audience-area{
+           position: absolute;
+           top: 15%;
+       }
+       .back_img-area{
+           top: 25%;
+           position: relative;
+           left: 10%;
+       }
+    
+       .login-area{
+           position: absolute;
+           z-index: 99;
+           left: 55%;
+           top: 10%;
+           border-radius: 5%;
+       }
+    
+       .login-icon{
+           margin-left: 8%;
+           margin-top: 5%;
+       }
+       .login-icon p{
+           font-size: 20px;
+       }
+
+
+
+
+
+.main {
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 380px;
+    width: 300px;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+    padding-top: 40px;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.un {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0,.5);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }   
+
+form.form1 {
+    padding-top: 40px;
+}
+
+.pass {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0,.5);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+
+
+.un:focus, .pass:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    
+    }
+
+    .login{
+        left: 35%;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+/* .submit {
+  cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, black, black);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    } */
+
+.forgot {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: black;
+    padding-top: 15px;
+    }
+
+a {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #ffffff;
+    text-decoration: none
+    }
+
+
+
+.concept{
+    height: 550px;
+    max-width: 1080px;
+    background-color: #EF682E;
+    position: relative;
+    opacity : 0;
+    transform: translateY(-100px);
+
+    transition: opacity 3s;
+}
+
+
+.concept-message{
+    font-family: 'PT Serif', serif;
+    padding-top: 8%;
+    padding-left: 8%;
+}
+
+.concept-container{
+    padding-top: 2%;
+    padding-left: 15%;
+}
+.concept-container p{
+    font-size: 30px;
+    padding-top: 3%;
+}
+#conect-img{
+    position: absolute;
+    width: 350px;
+    left: 55%;
+}
+
+
+.Ability{
+    height: 550px;
+    max-width: 1080px;
+    background-color: #FCCBB7;
+    position: relative;
+    opacity : 0;
+    transform: translateY(-100px);
+
+    transition: opacity 2s;
+}
+
+.concept.view{
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+.Ability.view{
+    opacity: 1;
+    transform: none;
+}
+
+}
+   

@@ -1,15 +1,60 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'CSS/main.css' %}">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello</h1>
-    <button id="button">Hello</button>
-</body>
-<script type="text/javascript" src="{% static 'JS/index.js' %}"></script>
-</html>
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/index.css' %}">
+{% endblock %}
+{% block content %}
+    <header>
+        <div class="header">
+            <div class="header-menu">
+                <h1 class="megami-logo header-item">Megami</h1>
+                <div class="signin-button header-item">
+                    <button class="login-btn"> <span>Signin</span> </button>
+                </div>
+            </div>
+            <div class="audience-area">
+                <div class="signin-message">
+                    <h2 id="connect-message">Let's connect ! !</h2>
+                    <h2 id="using-message">using Megami</h2>
+                </div>
+                <div class="btn">
+                    <button class="login-btn"> <span>Get started</span> </button>
+                </div>
+            </div>
+                <div class="back_img-area audience-area">
+                    <img src="{% static 'IMG/index_img/1544004869.png' %}" id="Megami_img" alt="Megami" >
+                    <img src="{% static 'IMG/index_img/1544163788-1.png' %}" id="JK_img" alt="JK" >
+                </div>
+
+            <div class="login-area">
+                <div class="main">
+                    <p class="sign" align="center">Login</p>
+                    <form class="form1">
+                      <input class="un " type="text" align="center" placeholder="Username">
+                      <input class="pass" type="password" align="center" placeholder="Password">
+                      <!-- <a class="submit" align="center">Login</a> -->
+                      <button class="login-btn login"> <span>Login</span> </button>
+                      <p class="forgot" align="center"><a href="#">Forgot Password?</p></a>          
+                    </div>
+            </div>
+        </div>
+    </header>
+    <concept>
+        <div class="concept">
+            <h1 class="concept-message"> Concept </h1>
+            <div class="concept-img">
+                <img src="{% static 'IMG/index_img/1535965055.png' %}" id="conect-img" alt="conect" >
+            </div>
+            <div class="concept-container">
+                <p class="salon-con">美容師とユーザーをつなげる</p>
+                <p class="user-con">サロンとユーザーをつなげる</p>
+                <p class="stylist-con">サロンと美容師をつなげる</p>
+            </div>
+        </div>
+    </concept>
+    <Ability>
+        <div class="Ability">
+
+        </div>
+    </Ability>
+{% endblock %}
