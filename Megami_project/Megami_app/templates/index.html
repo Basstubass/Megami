@@ -14,8 +14,8 @@
             </div>
             <div class="audience-area">
                 <div class="signin-message">
-                    <h2 id="connect-message">Let's connect ! !</h2>
-                    <h2 id="using-message">using Megami</h2>
+                    <h2 id="connect-message" class="connect-message">Let's connect ! !</h2>
+                    <h2 id="using-message" class="using-message">using Megami</h2>
                 </div>
                 <div class="btn">
                     <button class="login-btn"> <span>Get started</span> </button>
@@ -52,9 +52,20 @@
             </div>
         </div>
     </concept>
+    <center>
     <Ability>
         <div class="Ability">
-
+            <h1 class="Ability-message">Ability</h1>
+            <div class="Ability-img">
+                <img src="{% static 'IMG/index_img/1517047896-1.png' %}"class="Ability-img1" id="Ability-img1" alt="conect" >
+                <img src="{% static 'IMG/index_img/1544163784.png' %}" class="Ability-img2" id="Ability-img2" alt="conect" >
+            </div>
+            <div class="Ability-container">
+                <p class="stylist-user">お気に入りの美容室・美容師を探せる</p>
+                <p class="salon-user">ビジネス・リクルートに利用できる</p>
+                <p class="stylist-salon">容姿の変化や日常を投稿し共有できる</p>
+            </div>
         </div>
     </Ability>
+    </center>
 {% endblock %}

@@ -109,8 +109,20 @@
         font-size: 25px;
         width: 400px;
        }
+
+       .connect-message{
+        transform: translateX(-100px);
+        transition: 2s;
+        opacity : 0;
+       }
        #connect-message{
-           margin: 0;
+        margin: 0;
+       }
+
+       .using-message{
+        transform: translateY(-100px);
+        transition: 2s;
+        opacity : 0;
        }
 
        #using-message{
@@ -271,15 +283,31 @@ a {
     position: relative;
     opacity : 0;
     transform: translateY(-100px);
-
     transition: opacity 3s;
 }
-
-
+.salon-con{
+    opacity : 0;
+    transition: opacity 3s;
+}
+.user-con{
+    opacity : 0;
+    transition: opacity 4s;
+}
+.stylist-con{
+    opacity : 0;
+    transition: opacity 5s;
+}
 .concept-message{
     font-family: 'PT Serif', serif;
     padding-top: 8%;
     padding-left: 8%;
+    transform: translateX(-100px);
+    transition: 2s;
+    opacity : 0;
+}
+.show{
+    opacity: 1;
+    transform: none;
 }
 
 .concept-container{
@@ -295,6 +323,11 @@ a {
     width: 350px;
     left: 55%;
 }
+.concept-img{
+    transform: translateY(100px);
+    transition: 2s;
+    opacity : 0;
+}
 
 
 .Ability{
@@ -303,11 +336,14 @@ a {
     background-color: #FCCBB7;
     position: relative;
     opacity : 0;
-    transform: translateY(-100px);
-
+    transform: translateY(100px);
     transition: opacity 2s;
 }
 
+.show{
+    opacity: 1;
+    transform: none;
+}
 .concept.view{
     opacity: 1;
     transform: translate(0, 0);
@@ -317,6 +353,35 @@ a {
     opacity: 1;
     transform: none;
 }
+.Ability-message{
+    font-family: 'PT Serif', serif;
+    padding-top: 6%;
+}
+
+.Ability{
+    position: relative;
+}
+
+.Ability-img1{
+    position: absolute;
+    width: 400px;
+    left: 0;
+}
+.Ability-img2{
+    position: absolute;
+    width: 380px;
+    top: 25%;
+    left: 65%;
+
+}
+.Ability-container{
+    margin-top: 8%;
+    font-size: 30px;
+}
+.Ability-container p{
+    padding-top: 2%;
+}
+
 
 }
    
