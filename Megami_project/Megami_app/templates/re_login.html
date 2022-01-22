@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/re_login.css' %}">
+{% endblock %}
+{% block content %}
+<main >
+    <div class="main">
+        <div class="header">
+            <h1 class="megami-logo header-item"><a href="/" class="logo">Megami</a></h1>
+        </div>
+        
+        <div class="signin">
+            <h1><img src="{% static 'IMG/signin_img/upper_body-1.png' %}" id="user_icon" alt="User" >アカウント登録</h1>
+        </div>
+        <div class="news-container">
+            <h1>登録ありがとうございます。</h1>
+        </div>
+        <div class="sub-container">
+            <p>登録されたNameとパスワードでログインしてください。</p>
+        </div>
+
+        <div class="login-area">
+            <div class="area">
+                <div class="container">
+                    <p class="sign" align="center">Login</p>
+                <form class="form1">
+                  <input class="un " type="text" align="center" placeholder="Username">
+                  <input class="pass" type="password" align="center" placeholder="Password">
+                  <!-- <a class="submit" align="center">Login</a> -->
+                  <div>
+                    <button class="login-btn login"> <span>Login</span> </button>
+                  </div>
+                  <p class="forgot" align="center"><a href="#">Forgot Password?</p></a> 
+                </div>         
+            </div>
+        </div>
+        
+    </div>
+</main>
+{% endblock %}

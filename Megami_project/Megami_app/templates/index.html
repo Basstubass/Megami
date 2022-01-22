@@ -7,9 +7,9 @@
     <header>
         <div class="header">
             <div class="header-menu">
-                <h1 class="megami-logo header-item">Megami</h1>
+                <h1 class="megami-logo header-item"><a href=" " class="logo">Megami</a></h1>
                 <div class="signin-button header-item">
-                    <button class="login-btn"> <span>Signin</span> </button>
+                    <button class="login-btn"> <span><a href="signin/">Signin</a></span> </button>
                 </div>
             </div>
             <div class="audience-area">
@@ -35,7 +35,7 @@
                       <!-- <a class="submit" align="center">Login</a> -->
                       <button class="login-btn login"> <span>Login</span> </button>
                       <p class="forgot" align="center"><a href="#">Forgot Password?</p></a>          
-                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -43,7 +43,7 @@
         <div class="concept">
             <h1 class="concept-message"> Concept </h1>
             <div class="concept-img">
-                <img src="{% static 'IMG/index_img/1535965055.png' %}" id="conect-img" alt="conect" >
+                <img src="{% static 'IMG/index_img/1535965055.png' %}" class="conect-img" alt="conect" >
             </div>
             <div class="concept-container">
                 <p class="salon-con">美容師とユーザーをつなげる</p>
@@ -68,4 +68,6 @@
         </div>
     </Ability>
     </center>
+
+    
 {% endblock %}

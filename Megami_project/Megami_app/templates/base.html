@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="{% static 'CSS/main.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'CSS/main.css' %}">
     {% block style %}
     
     {% endblock %}
@@ -20,7 +20,33 @@
     {% block content %}
     
     {% endblock %}
+    <footer>
+        <div class="footer">
+            <h1 class="footer-logo">Megami</h1>
+            <ul class="footer-menu">
+                <li>Home</li>
+                <li>サイトマップ</li>
+                <li>プライポリシー</li>
+                <li>ご利用にあたって</li>
+            </ul>
+            <ul class="footer-list">
+                <li>FAQ</li>
+                <li>ご意見</li>
+                <li>KAMUI</li>
+                <li class="icon-container">
+                    SNS
+                    <img src="{% static 'IMG/base_img/facebook_icon.png' %}">
+                    <img src="{% static 'IMG/base_img/Twitter_Icon.png' %}">
+                    <img src="{% static 'IMG/base_img/instagram_icon.png' %}">
+                    <img src="{% static 'IMG/base_img/Pinterest_icon.png' %}">
+
+                </li>
+            </ul>
+        </div>
+    </footer>
 </body>
+
 <script type="text/javascript" src="{% static 'JS/index.js' %}"></script>
+<script type="text/javascript" src="{% static 'JS/signin.js' %}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </html>
