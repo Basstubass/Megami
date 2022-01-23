@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# テンプレート(HTML)
+TEMPLATE_DIR = os.path.join(BASE_DIR,"Template")
+# static(CSS, Js, IMG)
+STATIC_DIR = os.path.join(BASE_DIR,"static")
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Megami_app'
+    'Megami_app',
+    'Megami_accounts',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +62,7 @@ ROOT_URLCONF = 'Megami_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,16 +84,28 @@ WSGI_APPLICATION = 'Megami_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Megami_db', #　作成したデータベース名
-        'USER': 'root','ylim01' # ログインユーザー名
+        'NAME': 'Megami_db', 
+        #　作成したデータベース名
+        'USER': 'root','ylim01' 
+        # ログインユーザー名
         'HOST': '',
         'PORT': '',
     }
 }
 
+AUTH_USER_MODEL = 'Megami_accounts.User'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+
+# PASSWORD_HASHERS = [
+#     "django.contrib.auth.hashers.Argon2PasswordHasher",
+#     "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
+#     "django.contrib.auth.hashers.BCryptPasswordHasher",
+#     "django.contrib.auth.hashers.PBKDF2PasswordHasher",
+#     "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
+# ]
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -94,6 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        # 'OPTIONS':{"min_length":6},
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -102,6 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 
 
 # Internationalization
