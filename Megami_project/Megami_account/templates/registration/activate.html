@@ -18,24 +18,15 @@
         </div>
         <div class="sub-container">
             <p>登録されたNameとパスワードでログインしてください。</p>
+            {% if result %}
+            <p > <a href="{% url 'login' %} ">ログイン</a></p>
+            {% else %}
+            <p>無効なリンクです。</p>
+            {% endif %}
         </div>
-
-        <div class="login-area">
-            <div class="area">
-                <div class="container">
-                    <p class="sign" align="center">Login</p>
-                <form class="form1">
-                  <input class="un " type="text" align="center" placeholder="Username">
-                  <input class="pass" type="password" align="center" placeholder="Password">
-                  <!-- <a class="submit" align="center">Login</a> -->
-                  <div>
-                    <button class="login-btn login"> <span>Login</span> </button>
-                  </div>
-                  <p class="forgot" align="center"><a href="#">Forgot Password?</p></a> 
-                </div>         
-            </div>
-        </div>
-        
     </div>
 </main>
+<script type="text/javascript" src="{% static 'JS/login.js' %}"></script>
+
+
 {% endblock %}

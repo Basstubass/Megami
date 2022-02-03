@@ -9,7 +9,7 @@
             <div class="header-menu">
                 <h1 class="megami-logo header-item"><a href=" " class="logo">Megami</a></h1>
                 <div class="signin-button header-item">
-                    <button class="login-btn"> <span><a href="signin/">Signin</a></span> </button>
+                    <button class="login-btn" onclick="location.href='/signup'" > <span>Signin</span> </button>
                 </div>
             </div>
             <div class="audience-area">
@@ -18,7 +18,7 @@
                     <h2 id="using-message" class="using-message">using Megami</h2>
                 </div>
                 <div class="btn">
-                    <button class="login-btn"> <span>Get started</span> </button>
+                    <button class="login-btn" onclick="location.href='/signup'"> <span>Get started</span> </button>
                 </div>
             </div>
                 <div class="back_img-area audience-area">
@@ -28,13 +28,17 @@
 
             <div class="login-area">
                 <div class="main">
+                    {{user}}
                     <p class="sign" align="center">Login</p>
-                    <form class="form1">
-                      <input class="un " type="text" align="center" placeholder="Username">
-                      <input class="pass" type="password" align="center" placeholder="Password">
+                    <center>
+                    <form class="form1" method="POST">
+                        {% csrf_token %}
+                        {{form.as_p}}
                       <!-- <a class="submit" align="center">Login</a> -->
                       <button class="login-btn login"> <span>Login</span> </button>
-                      <p class="forgot" align="center"><a href="#">Forgot Password?</p></a>          
+                      <p class="forgot" align="center"><a href="{% url 'password_reset'%}">Forgot Password?</p></a>   
+                    </form> 
+                    </center>      
                 </div>
             </div>
         </div>
@@ -68,6 +72,6 @@
         </div>
     </Ability>
     </center>
-
-    
+    <script type="text/javascript" src="{% static 'JS/index.js' %}"></script>
 {% endblock %}
+

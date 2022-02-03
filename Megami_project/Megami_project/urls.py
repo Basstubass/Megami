@@ -15,8 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth.decorators import login_required
+from django.views.generic import TemplateView
+
+from Megami_account import views
+
+home_view = TemplateView.as_view(template_name = "home.html")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Megami_app.urls'))
+    path('', include('Megami_app.urls')),
+
+    path('', login_required(home_view), name="home"),
+    path('', include('django.contrib.auth.urls')),
+
+    path('signup/', views.SignUpView.as_view(), name="signup"),
+    path('activate/<uidb64>/<token>/', views.ActivateView.as_view(), name="activate")
 ]

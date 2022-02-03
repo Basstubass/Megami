@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/signin.css' %}">
+{% endblock %}
+{% block content %}
+<main >
+    <div class="main">
+        <div class="header">
+            <h1 class="megami-logo header-item"><a href="/" class="logo">Megami</a></h1>
+            
+        </div>
+        
+        <div class="signin">
+            <h1><img src="{% static 'IMG/signin_img/upper_body-1.png' %}" id="user_icon" alt="User" >アカウント登録</h1>
+            <center>
+                <div class="signin_container">
+                        <p class="sign" align="center">Sign up</p>
+                        <form class="form1" method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                          <button class="login-btn login" type="submit"> <span>Sign up</span> </button>
+                        </form>
+                </div>
+            </center>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" src="{% static 'JS/signin.js' %}"></script>
+{% endblock %}

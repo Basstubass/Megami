@@ -36,4 +36,10 @@ window.addEventListener("load", function() {
     } 
 });
 
+let user_name = document.getElementById("id_username");
+user_name.classList.add('un')
+
+let password = document.getElementById('id_password');
+password.classList.add('pass')
+
 

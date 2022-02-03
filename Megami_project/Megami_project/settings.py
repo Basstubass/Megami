@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-^9bcu2436#0avrzyhxx_nkwxzh&v03i79v%+rjvw8)x#x-vb&h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # テンプレート(HTML)
@@ -36,6 +37,8 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 # Application definition
 
 INSTALLED_APPS = [
+    # 'registartion'
+    'Megami_account',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,8 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Megami_app',
-    'Megami_accounts',
     'phonenumber_field',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -85,16 +88,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Megami_db', 
-        #　作成したデータベース名
+        # 作成したデータベース名
         'USER': 'root','ylim01' 
         # ログインユーザー名
         'HOST': '',
         'PORT': '',
     }
 }
-
-AUTH_USER_MODEL = 'Megami_accounts.User'
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-        # 'OPTIONS':{"min_length":6},
+        'OPTIONS':{"min_length":6},
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -145,7 +145,34 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'Megami_account.User'
+# LOGIN_REDIRECT_URL = 'Megami_project:product_list' 
+
+# LOGIN_URL = 'login'
+# LOGIN_REDIRECT_URL = 'home'
+
+APPEND_SLASH = False
+
+OPTIONS: {
+"init_command": "SET foreign_key_checks = 0;",
+}
+
+FRONTEND_URL = "http://127.0.0.1:8000/"
+
+ANYMAIL = {
+    "MAILGUN_API_KEY": "ff77a4da025c0c07fd78f132b8a63136-c250c684-ef4219cc",
+    "MAILGUN_SENDER_DOMAIN": 'sandboxde0ff7cc836c406dac70755faa9e21fa.mailgun.org',
+}
+EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+
+DEFAULT_FROM_EMAIL = "tubasu@sample.com"
+SERVER_EMAIL = "0130tubasa@gmail.com"

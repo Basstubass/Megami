@@ -172,7 +172,7 @@
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0,.5);
     margin-bottom: 50px;
-    margin-left: 25%;
+    margin-left: 10%;
     text-align: center;
     margin-bottom: 27px;
     font-family: 'Ubuntu', sans-serif;
@@ -196,7 +196,7 @@ form.form1 {
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0,.5);
     margin-bottom: 50px;
-    margin-left: 25%;
+    margin-left: 10%;
     text-align: center;
     margin-bottom: 27px;
     font-family: 'Ubuntu', sans-serif;
@@ -227,4 +227,8 @@ a {
     color:white;
     text-decoration: none;
     }
+.re_loginform{
+    height: 100px;
+}
+
 }

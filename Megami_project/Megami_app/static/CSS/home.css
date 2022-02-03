@@ -1,0 +1,65 @@
+/* 480px〜599px：SP横
+------------------------------ */
+@media screen and (min-width:480px) and (max-width:599px) { 
+    
+}
+  
+/* 600px〜959px：タブレット
+------------------------------ */
+@media screen and (min-width:600px) and (max-width:959px) {
+ 
+}
+  
+/* 960px〜1279px：小型PC
+------------------------------ */
+@media screen and (min-width:960px) and (max-width:1080px) {
+
+}
+  
+/* 1280px〜：大型PC
+------------------------------ */
+@media screen and (min-width:1080px) {
+    
+    body{
+        margin: 0;
+        padding: 0;
+        max-width: 1080px;
+        margin-left:auto;    /* 左側マージンを自動的に空ける */
+        margin-right:auto;   /* 右側マージンを自動的に空ける */     /* 中身を左側表示に戻す */
+    }
+    .header{
+        height: 100px;
+        max-width: 1080px;
+        background-color: #FFA500;
+        border-bottom: 1px solid black;
+    }
+    .header-item{
+        float: left;
+    }
+    .megami-logo{
+        margin: 0;
+        padding-top: 30px;
+        padding-left: 7%;
+        font-family: 'Quattrocento', serif;
+        font-size: 25px;        /* position: relative; */
+    }
+    .megami-logo a{
+        color: black;
+        text-decoration: none;
+    }
+    .header-account_menu{
+        position: relative;
+    }
+    .header-account_menu h2{
+        position: absolute;
+        left: 90%;
+        padding-top: 25px;
+    }
+
+    .main{
+        height: 1000px;
+        max-width: 1080px;
+        background-color: #FFA500;
+    }
+
+}
