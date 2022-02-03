@@ -7,6 +7,9 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
+from django.forms import ModelForm
+from django.contrib.auth.models import User
+
 User = get_user_model()
 
 subject = "登録確認メール"
@@ -25,7 +28,7 @@ def get_activate_url(user):
 class SignUpFrom(UserCreationForm):
     class Meta:
         model = User
-        fields = ("username", "email", "password1", "password2")
+        fields = ("username", "email", "password1", "password2", )
 
     def save(self, commit=True):
         user = super().save(commit=False)
@@ -54,3 +57,28 @@ def activate_user(uidb64, token):
 
     return False
 
+class UserChangeForm(ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'icon',
+            'introduction',
+        ]
+    
+    def __init__(self, username=None, icon=None, introduction=None,  *args, **kwargs):
+        kwargs.setdefault('label_suffix', '')
+        super().__init__(*args, **kwargs)
+        # ユーザーの更新前情報をフォームに挿入
+        if username:
+            self.fields['username'].widget.attrs['value'] = username
+        if icon:
+            self.fields['icon'].widget.attrs['value'] = icon
+        if introduction:
+            self.fields['introduction'].widget.attrs['value'] = introduction
+    
+    def update(self, user):
+        user.username = self.cleaned_data['username']
+        user.icon = self.cleaned_data['icon']
+        user.introduction = self.cleaned_data['introduction']
+        user.save()

@@ -62,4 +62,66 @@
         background-color: #FFA500;
     }
 
+    .account{
+        position:relative;
+        left: 63%;
+        top: 45px;
+    }
+    .profile-aria{
+        position:absolute;
+        height: 400px;
+        width: 300px;
+        z-index: 100;
+        background-color: white;
+        border-radius: 10px;
+        background-color: #DBDBDB;
+
+    }
+    .profile h2{
+        font-size: 20px;
+        text-align: center;
+        padding-top: 5%;
+    }
+    .profile i{
+        position:absolute;
+        top: 2%;
+        left: 91%;
+    }
+    
+    .username h1{
+        position:absolute;
+        top:19%;
+        left:35%;
+        font-size: 25px;
+    }
+    .icon_area{
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+    .email p{
+        padding-left: 5%;
+        padding-top: 5%;
+    }
+    .email h1{
+        position:absolute;
+        top:40%;
+        left:23%;
+        font-size: 17px;
+    }
+
+    .introduction p{
+        padding-left: 5%;
+        padding-top: 5%;
+    }
+    .introduction h1{
+        font-size: 17px;
+        padding-left: 23%;
+    }
+    .change_account{
+        padding-top: 30%;
+        text-align: center;
+    }
+
+
+
 }
