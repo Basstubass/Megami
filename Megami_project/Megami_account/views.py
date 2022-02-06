@@ -1,19 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, FormView
-from .forms import activate_user
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import SignUpFrom, UserChangeForm
-# Create your views here.
+from .forms import SignUpFrom, ProfileForm, activate_user
+from .models import User
+from django.views.generic import View
 
 
+
+from Megami_app.models import Post
+from Megami_app.forms import PostForm
+
+# Create your views here
 class SignUpView(CreateView):
     form_class = SignUpFrom
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
-
-
 
 class ActivateView(TemplateView):
     template_name = "registration/activate.html"
@@ -23,22 +26,47 @@ class ActivateView(TemplateView):
         return super().get(request, result=result, **kwargs)
 
 
-class UserChangeView(LoginRequiredMixin, FormView):
-    template_name = 'registration/change.html'
-    form_class = UserChangeForm
-    success_url = reverse_lazy('home')
-    
-    def form_valid(self, form):
-        #formのupdateメソッドにログインユーザーを渡して更新
-        form.update(user=self.request.user)
-        return super().form_valid(form)
 
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        # 更新前のユーザー情報をkwargsとして渡す
-        kwargs.update({
-            'username' : self.request.user.username,
-            'icon' : self.request.user.icon,
-            'introduction' : self.request.user.introduction,
+class ProfileEditView(LoginRequiredMixin, FormView):
+    def get(self, request, *args, **kwargs):
+        user_data = User.objects.get(id=request.user.id)
+        form = ProfileForm(
+            request.POST or None,
+            initial={
+                'username' : user_data.username,
+                'first_name': user_data.first_name,
+                'last_name': user_data.last_name,
+                'description': user_data.description,
+                'image': user_data.image
+            }
+        )
+        return render(request, 'registration/change.html', {
+            'form': form,
+            'user_data': user_data
         })
-        return kwargs
+
+    def post(self, request, *args, **kwargs):
+        # post_data = Post.objects.order_by('-id')
+        form = ProfileForm(request.POST or None)
+        if form.is_valid():
+            user_data = User.objects.get(id=request.user.id)
+            user_data.username = form.cleaned_data['username']
+            user_data.first_name = form.cleaned_data['first_name']
+            user_data.last_name = form.cleaned_data['last_name']
+            user_data.description = form.cleaned_data['description']
+            if request.FILES.get('image'):
+                user_data.image = request.FILES.get('image')
+            user_data.save()
+            return redirect('home')
+
+        return render('templates/home.html', {
+            'form': form,
+            # 'post_data':post_data
+        })
+    
+
+    # def get(self, request, *args, **kwargs):
+    #     post_data = Post.objects.order_by('-id')
+    #     return render(request, 'index.html',{
+    #         'post_data':post_data
+    #     })

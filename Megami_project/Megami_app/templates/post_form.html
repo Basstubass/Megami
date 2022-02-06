@@ -1,0 +1,51 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/post_form.css' %}">
+{% endblock %}
+{% block content %}
+<main >
+    <div class="main">
+        <div class="header">
+            <h1 class="megami-logo header-item"><a href="/" class="logo">Megami</a></h1>
+        </div>
+        <div class="post_area">
+          <div class="post-title">
+            <i class="fas fa-paper-plane"></i>
+            <h2>Post</h2>
+          </div>
+                <div class="Post_container">
+                        <!-- <p class="sign" align="center">POST</p> -->
+                        <form method="post" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <div class="formpost">
+                            <label class="title_label">Title</label>
+                            <div class="title_post">{{ form.title }}</div>
+                          </div>
+
+                          <div class="formpost">
+                            <label class="content_label">Content</label>
+                            <div class="title_post">{{ form.content }}</div>
+                            
+                          </div>
+                          <div class="formpost">
+                            <label class="upload-label">
+                              <i class="fas fa-cloud-upload-alt"></i>
+                              Image
+                              {{ form.image }}
+                            </label>
+                          </div>
+
+                          <!-- <button class="" type="submit">投稿する</button> -->
+                          <div class="container">
+                            <button id="button" type="submit"></button>
+                          </div>
+                        </form>
+                </div>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" src="{% static 'JS/post_form.js' %}"></script>
+{% endblock %}
+

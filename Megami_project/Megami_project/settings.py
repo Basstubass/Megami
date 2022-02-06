@@ -65,7 +65,7 @@ ROOT_URLCONF = 'Megami_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -166,7 +166,7 @@ AUTH_USER_MODEL = 'Megami_account.User'
 APPEND_SLASH = False
 
 OPTIONS: {
-"init_command": "SET foreign_key_checks = 0;",
+    "init_command": "SET foreign_key_checks = 0;",
 }
 
 FRONTEND_URL = "http://127.0.0.1:8000/"

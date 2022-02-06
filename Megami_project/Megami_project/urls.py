@@ -18,10 +18,13 @@ from django.urls import path, include
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 
+from Megami_app import views
 from Megami_account import views
 
 from django.conf import settings
 from django.conf.urls.static import static
+
+
 
 
 home_view = TemplateView.as_view(template_name = "home.html")
@@ -29,13 +32,16 @@ home_view = TemplateView.as_view(template_name = "home.html")
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Megami_app.urls')),
-
     path('', login_required(home_view), name="home"),
     path('', include('django.contrib.auth.urls')),
 
     path('signup/', views.SignUpView.as_view(), name="signup"),
     path('activate/<uidb64>/<token>/', views.ActivateView.as_view(), name="activate"),
-    path('change/', views.UserChangeView.as_view(), name="change"),
+    path('change/', views.ProfileEditView.as_view(), name="change"),
+
+    # path('post/<int:pk>',views.PostDetailView.as_view(), name="post_detail")
+    
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

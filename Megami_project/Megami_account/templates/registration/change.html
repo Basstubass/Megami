@@ -16,7 +16,7 @@
             <center>
                 <div class="signin_container">
                         <p class="sign" align="center">Account</p>
-                        <form class="form1" method="POST">
+                        <form class="form1" method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
                             {{ form.as_p }}
                           <button class="login-btn login" type="submit"> <span>Change</span> </button>

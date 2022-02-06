@@ -36,6 +36,7 @@
     .header-item{
         float: left;
     }
+
     .megami-logo{
         margin: 0;
         padding-top: 30px;
@@ -53,11 +54,19 @@
     .header-account_menu h2{
         position: absolute;
         left: 90%;
-        padding-top: 25px;
+        top: 30px;
+    }
+    .header-account_menu p{
+        position: absolute;
+        left: 86%;
+        top: 36px;
+        font-size: 20px;
+        color: rgb(153, 117, 250);
     }
 
+
     .main{
-        height: 1000px;
+        height: 1500px;
         max-width: 1080px;
         background-color: #FFA500;
     }
@@ -66,15 +75,17 @@
         position:relative;
         left: 63%;
         top: 45px;
+        opacity: 1; 
     }
     .profile-aria{
         position:absolute;
+        z-index: 900;
         height: 400px;
         width: 300px;
         z-index: 100;
-        background-color: white;
         border-radius: 10px;
-        background-color: #DBDBDB;
+        background-color: rgba(221, 218, 218, .9);
+        box-shadow: 0 0 8px rgba(0, 0, 0, .7);
 
     }
     .profile h2{
@@ -88,40 +99,169 @@
         left: 91%;
     }
     
-    .username h1{
-        position:absolute;
-        top:19%;
-        left:35%;
+    .icon_area{
+        padding-top:  20px;
+        padding-left: 20px;
+    }
+    .icon_area img{
+        width:85px;
+        height: 85px;
+        display:inline-block;
+        border:2px solid black;
+        border-radius:50%;
+        padding:2px;
+    }
+    .fast-name{
+        position: absolute;
+        top: 20%;
+        left: 45%;
+    }
+    .fast-name p{
         font-size: 25px;
     }
-    .icon_area{
-        margin-top: 15px;
-        margin-left: 20px;
+    .last-name{
+        position: absolute;
+        top: 20%;
+        left: 65%;
+    }
+    .last-name p{
+        font-size: 25px;
+    }
+    .username{
+        position: absolute;
+        top: 30%;
+        left: 45%;
+    }
+    .username p{
+        font-size: 20px;
+    }
+    .email{
+        padding-top: 6%;
+        padding-left: 10%;
+    }
+    .email h3{
+        font-size: 20px;
+        font-weight: 50;
     }
     .email p{
-        padding-left: 5%;
-        padding-top: 5%;
+        position: absolute;
+        top: 43%;
+        left: 30%;
     }
-    .email h1{
-        position:absolute;
-        top:40%;
-        left:23%;
-        font-size: 17px;
+    .introduction{
+        padding-left: 10%;
     }
-
-    .introduction p{
-        padding-left: 5%;
-        padding-top: 5%;
+    .introduction h3{
+        font-size: 20px;
+        font-weight: 50;
     }
-    .introduction h1{
-        font-size: 17px;
-        padding-left: 23%;
+    .comment_container{
+        padding:5px;
+        height: 130px;
+        width: 240px;
+        font-weight: bold;
+        background: #FFF;
+        border: solid 3px #e4d26d;/*線*/
+        border-radius: 10px;/*角の丸み*/
     }
     .change_account{
-        padding-top: 30%;
-        text-align: center;
+        padding-left: 55%;
+        padding-top:2%;
+    }
+    .change_account a{
+        color:black;
+        text-decoration: none;
+        padding-left: 8px;
+    }
+    .show{
+        visibility: hidden;
+        opacity: 0;
+    }
+    #x_icon{
+        cursor: pointer;
+    }
+    #account_icon{
+        cursor: pointer;
     }
 
+    /* main */
+    .main{
+        position: relative;
+    }
+    .post{
+        margin-top: 10%;
+    }
+    .post-area{
+        position: absolute;
+        left: 49%;
+        top: 2%;
+        height: auto;
+        width: 500px;
+        height: 1400px;
+        overflow: scroll;
+        
+     }
+    .post-image_area{
+        background-color: rgba(128, 127, 127, 0.796);
+        border-radius: 10px;
+        width: 450px;
+    }
+    .post-image_area img{
+        width: 380px;
+        border-radius: 10px;
 
+    }
+    .post_title{
+        position:relative;
+        margin-top: 4%;
+    }
+    .post_title h2{
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        font-family: 'Quattrocento', serif;
+    }
+    .post_content{
+        width: 400px;
+        margin-left: 10%;
+        margin-top:4%;
+    }
+    .more_sea{
+        margin-left: 80%;
+    }
+    .more_sea a{
+        text-decoration: none;
+        font-size: 12px;
+        color: rgba(79, 78, 78, 0.9);
+    }
+    .post_user{
+        margin-left: 10%;
+    }
+    .post_user p{
+        margin: 0;
+
+    }
+    .user_line{
+        border-bottom: solid 2px #000000;
+        width: 90%;
+    }
+    .icon-img{
+        width:20px;
+        height: 20px;
+        display:inline-block;
+        border:.8px solid rgb(75, 75, 75);
+        border-radius:50%;
+        padding:1px;
+        background-color: #6f6f6fa6;
+        margin-bottom: 3px;
+    }
+    .post_data{
+        display: inline;
+        font-family: 'Quattrocento', serif;
+    }
+    .date{
+        font-size: 15px;
+        padding-left: 50%;
+    }
 
 }

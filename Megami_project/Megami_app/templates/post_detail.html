@@ -1,0 +1,25 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+    {% block style %}
+        <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+    {% endblock %}
+    {% block content %}
+    <h2 class="my-4">{{ post_data.title }}</h2>
+<hr />
+<p>{{ post_data.created }} by {{ post_data.user }}</p>
+<hr />
+{% if post_data.image %}
+<img class="rounded detail-img" src="{{ post_data.image.url }}" alt="" />
+{% endif %}
+<hr />
+<p>{{ post_data.content|linebreaksbr }}</p>
+{% if user.is_authenticated %}
+<hr />
+<div class="d-flex mb-5">
+  <a class="btn btn-warning mr-2" href="{% url 'Megami_app:post_edit' post_data.id %}">編集する</a>
+  <a class="btn btn-danger" href="{% url 'Megami_app:post_delete' post_data.id %}">削除する</a>
+</div>
+{% endif %}
+{% endblock %}

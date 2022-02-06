@@ -6,7 +6,7 @@ from django.conf import settings
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-
+from django import forms
 from django.forms import ModelForm
 from django.contrib.auth.models import User
 
@@ -57,28 +57,10 @@ def activate_user(uidb64, token):
 
     return False
 
-class UserChangeForm(ModelForm):
-    class Meta:
-        model = User
-        fields = [
-            'username',
-            'icon',
-            'introduction',
-        ]
-    
-    def __init__(self, username=None, icon=None, introduction=None,  *args, **kwargs):
-        kwargs.setdefault('label_suffix', '')
-        super().__init__(*args, **kwargs)
-        # ユーザーの更新前情報をフォームに挿入
-        if username:
-            self.fields['username'].widget.attrs['value'] = username
-        if icon:
-            self.fields['icon'].widget.attrs['value'] = icon
-        if introduction:
-            self.fields['introduction'].widget.attrs['value'] = introduction
-    
-    def update(self, user):
-        user.username = self.cleaned_data['username']
-        user.icon = self.cleaned_data['icon']
-        user.introduction = self.cleaned_data['introduction']
-        user.save()
+
+class ProfileForm(forms.Form):
+    username = forms.CharField(max_length=20, label='ユーザーネーム')
+    first_name = forms.CharField(max_length=30, label='姓')
+    last_name = forms.CharField(max_length=30, label='名')
+    description = forms.CharField(label='自己紹介', widget=forms.Textarea(), required=False)
+    image = forms.ImageField(required=False, )
