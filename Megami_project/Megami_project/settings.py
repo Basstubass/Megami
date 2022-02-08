@@ -171,11 +171,12 @@ OPTIONS: {
 
 FRONTEND_URL = "http://127.0.0.1:8000/"
 
-ANYMAIL = {
-    "MAILGUN_API_KEY": "ff77a4da025c0c07fd78f132b8a63136-c250c684-ef4219cc",
-    "MAILGUN_SENDER_DOMAIN": 'sandboxde0ff7cc836c406dac70755faa9e21fa.mailgun.org',
-}
-EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+# ANYMAIL = {
+#     "MAILGUN_API_KEY": "ff77a4da025c0c07fd78f132b8a63136-c250c684-ef4219cc",
+#     "MAILGUN_SENDER_DOMAIN": 'sandboxde0ff7cc836c406dac70755faa9e21fa.mailgun.org',
+# }
+# EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-DEFAULT_FROM_EMAIL = "tubasu@sample.com"
-SERVER_EMAIL = "0130tubasa@gmail.com"
+# DEFAULT_FROM_EMAIL = "tubasu@sample.com"
+# SERVER_EMAIL = "0130tubasa@gmail.com"

@@ -16,4 +16,6 @@ urlpatterns = [
     path('post/<int:pk>/edit/' ,views.PostEditView.as_view(), name='post_edit'),
     path('post/<int:pk>/delete/' ,views.PostDeleteView.as_view(), name='post_delete'),
 
+    path('change/', views.add_good_count_for_article, name='change_count'),
+
 ]

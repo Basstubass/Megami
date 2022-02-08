@@ -36,6 +36,18 @@
     .header-item{
         float: left;
     }
+    .icon_area_img{
+        /* padding-top:  20px;
+        padding-left: 20px; */
+    }
+    .icon_area_img img{
+        width:40px;
+        height:40px;
+        display:inline-block;
+        border:1px solid rgb(55, 55, 55);
+        border-radius:50%;
+        padding:2px;
+    }
 
     .megami-logo{
         margin: 0;
@@ -114,17 +126,10 @@
     .fast-name{
         position: absolute;
         top: 20%;
-        left: 45%;
+        left: 40%;
     }
     .fast-name p{
-        font-size: 25px;
-    }
-    .last-name{
-        position: absolute;
-        top: 20%;
-        left: 65%;
-    }
-    .last-name p{
+        display: inline;
         font-size: 25px;
     }
     .username{
@@ -191,10 +196,11 @@
     .post{
         margin-top: 10%;
     }
+    .post_container{
+    }
     .post-area{
         position: absolute;
         left: 49%;
-        top: 2%;
         height: auto;
         width: 500px;
         height: 1400px;
@@ -202,8 +208,8 @@
         
      }
     .post-image_area{
-        background-color: rgba(128, 127, 127, 0.796);
-        border-radius: 10px;
+        background-color:#ffc65cf1;
+        border-radius: 5px;
         width: 450px;
     }
     .post-image_area img{
@@ -261,7 +267,105 @@
     }
     .date{
         font-size: 15px;
-        padding-left: 50%;
+        left: 40%;
+        position: relative;
     }
+
+    .add_good{
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .user_stories{
+        width: 400px;
+        position: absolute;
+        padding-top: 50px;
+        padding-left: 60px;
+    }
+    .user_stories h1{
+        font-family: 'Quattrocento', serif;
+    }
+    .user_follower{
+        padding-left: 8%;
+        height: 300px;
+        overflow: scroll;
+    }
+    .following h3{
+        font-size: 25px;
+        font-weight: 500;
+        padding-left:5px;
+        font-family: 'Quattrocento', serif;
+    }
+    .following img{
+        width: 50px;
+        height: 50px;
+        border: 2px solid rgb(87, 87, 87);
+        border-radius:50%;
+        padding:2px;
+    }
+    .following_data{
+        display: inline;
+    }
+    .follow_data{
+        padding-top: 7%;
+    }
+    .following_data a{
+        text-decoration: none;
+        color: #000000;
+    }
+    /* ストーリー */
+    .stories{
+        position: absolute;
+        top:10%;
+        left: 10%;
+        z-index: 900;
+    }
+    .stories_menu{
+        height: 580px;
+        width: 430px;
+        background-color: #fa8e00c4;
+        border-radius: 15px;
+    }
+    
+
+
+
+    
+    @keyframes heartAnimation {
+        0% {
+          /* アイコンサイズをもとのより小さくする */
+          transform: scale(0.5);
+        }
+        10% {
+          transform: scale(0.7);
+        }
+        30% {
+          transform: scale(0.9);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        80% {
+          transform: scale(1.5);
+        }
+        100% {
+          /* もとのサイズに戻す */
+          transform: scale(1.0);
+        }
+      }
+
+      .LikesIcon-fa-heart{
+        font-size: 17px;
+        cursor: pointer;
+        user-select: none;
+      }
+      .LikesIcon-fa-heart.heart{
+        /* heartAnimationアニメーションを200ミリ秒かけて実行する */
+        animation: heartAnimation .2s;
+        /* アイコン色を黒から赤へ変更する */
+        color: #e2264d;
+        
+      }
+     
 
 }

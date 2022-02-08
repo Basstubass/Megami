@@ -37,8 +37,11 @@ urlpatterns = [
 
     path('signup/', views.SignUpView.as_view(), name="signup"),
     path('activate/<uidb64>/<token>/', views.ActivateView.as_view(), name="activate"),
-    path('change/', views.ProfileEditView.as_view(), name="change"),
+    path('change_user/', views.ProfileEditView.as_view(), name="change_user"),
 
+    path('<slug:username>/', views.ProifileDetail.as_view(), name='detail'),
+    path('<slug:username>/follow', views.follow_view, name='follow'),
+    path('<slug:username>/unfollow', views.unfollow_view, name='unfollow'),
     # path('post/<int:pk>',views.PostDetailView.as_view(), name="post_detail")
     
     

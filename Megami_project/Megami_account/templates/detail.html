@@ -1,0 +1,26 @@
+<div class="button_field">
+
+    <!--もしプロフィールの遷移先が自分のプロフィールである場合の表示ボタン-->
+    {% if user.username == username %}
+　　　　 <!--プロフィールの遷移先が自分がフォローしているユーザーの場合の表示ボタン-->
+    {% elif connected %}
+        <a href="{% url 'unfollow' username %}" class="btn btn-dark">フォロー解除</a>
+    <!--自分がフォローしていないユーザーの場合の表示ボタン-->
+    {% else %}
+        <a href="{% url 'follow' username %}" class="btn btn-light">フォロー</a>
+    {% endif %}
+
+</div>
+
+<div class="follow_count">
+    <ul>
+        <li>
+　　　　　　　   <!--フォロー数を表示-->
+            <p>フォロー数</p><h2>{{ following }}</h2>
+        </li>
+        <li>
+            <!--フォロワー数を表示-->
+            <p>フォロワー数</p><h2>{{ follower }}</h2>
+        </li>
+    </ul>
+</div>

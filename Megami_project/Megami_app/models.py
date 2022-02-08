@@ -10,6 +10,10 @@ class Post(models.Model):
    image = models.ImageField('画像', upload_to='images', blank=True)
    created_at = models.DateTimeField('投稿日', default=timezone.now)
    user = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+   good_count = models.IntegerField(default=0)
 
    def __str__(self):
        return self.title
+
+
+

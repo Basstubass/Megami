@@ -1,0 +1,58 @@
+                <div class="post_container">
+                    <div class="post-area">
+                        {% for post in post_data %}
+                        <div class="post">
+                            <center>
+                                {% if post.image %}
+                                <div class="post-image_area">
+                                    <img src="{{ post.image.url }}" alt="" />
+                                </div>
+                                {% else %}
+                                <p>image none</p>
+                                {% endif %}
+                            </center>
+                                <div class="post_title">
+                                    <h2>{{ post.title }}</h2>
+                                </div>
+                                <div class="post_content">
+                                    <p>{{ post.content|truncatechars:100 }}</p>
+                                </div>
+                                <div class="more_sea"><a href="{% url 'Megami_app:post_detail' post.id %}">もっと見る<i class="fas fa-angle-right"></i></a></div>
+                                <div class="post_user ">
+                                    <div class="LikesIcon">
+                                        <p class="post_data add_good">
+                                            {% if user.icon == null%}
+                                                <img  class="icon-img" src="/media/{{ post.user.image }}">
+                                            {% else %}
+                                                <img src="{% static 'IMG/home_img/icons8-user-64.png' %}">
+                                            {% endif %}{{ post.user }}</p>
+                                        <i class="far fa-heart LikesIcon-fa-heart add_good"  id={{ post.id }}></i>
+                                        <p class="post_data date">{{ post.created_at|date }}</p>
+                                    </div>
+                                </div>
+                                <center>
+                                    <div class="user_line"></div>
+                                </center>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+                <div class="user_image_area user_follower">
+                    {% if user_follow.follower.image %}
+                            <img src="{{ user_data.follower.image.url }}" alt="" />
+                    {% else %}
+                            <img src="{% static 'IMG/home_img/icons8-user-64.png' %}">
+                    {% endif %}
+                    <h1>{{user_follow.follower.name}}</h1>
+                    </div>
+
+
+                    <div class="follower">
+                        <h2>フォロワー</h2>
+                        {% for user_follow in user_follower %}
+                        <h2>{{user_follow.follower.username}}</h2>
+                        <img src="{{ user_follow.follower.image.url }}" alt=""/>
+                        {% endfor %}
+                    </div>

@@ -10,10 +10,18 @@
                 <h1 class="megami-logo header-item"><a href=" " class="logo">Megami</a></h1>
             </div>
             <div class="header-account_menu">
-                <a href="{% url 'Megami_app:post_new' %}"><p><i class="fas fa-paper-plane" id="post_form" class="post_form"></i></p></a>
-                <h2><i class="fas fa-user-circle" id="account_icon"></i></h2>
+                <a href="{% url 'Megami_app:post_new' %}"><p>
+                <i class="fas fa-paper-plane" id="post_form" class="post_form"></i></p></a>
+                <h2>
+                    {% if user.image %}
+                    <div class="icon_area_img" id="account_icon">
+                        <img src="{{ user.image.url }}">
+                    </div>
+                    {% else %}
+                        <i class="fas fa-user-circle" id="account_icon"></i>
+                    {% endif %}
+                </h2>
             </div>
-
             <account class="account show">
                 <div class="profile-aria">
                     <div class="profile">
@@ -21,7 +29,7 @@
                         <i class="fas fa-times" id="x_icon"></i>
                         <div style="border-bottom: solid 2px black; "></div>
                         <div class="icon_area">
-                            {% if user.icon == null%}
+                            {% if user.image %}
                                 <img src="{{ user.image.url }}">
                             {% else %}
                                 <img src="{% static 'IMG/home_img/icons8-user-64.png' %}">
@@ -29,8 +37,6 @@
                         </div>
                         <div class="fast-name">
                             <p>{{user.first_name}}</p>
-                        </div>
-                        <div class="last-name">
                             <p>{{user.last_name}}</p>
                         </div>
                         <div class="username">
@@ -47,7 +53,7 @@
                             </div>
                         </div>
                         <div class="change_account">
-                            <a class="ui button" href="{% url 'change' %}">変更</a>
+                            <a class="ui button" href="{% url 'change_user' %}">変更</a>
                             <a href="{% url 'logout' %}">ログアウト</i></a>
                         </div>
                         
@@ -57,20 +63,37 @@
         </div>
     </header>
     
-    <main>
-        <div class="main">
-            <div class="post-area">
-                {% for post in post_data %}
-                <div class="post">
-                    <center>
-                        {% if post.image %}
-                        <div class="post-image_area">
-                            <img src="{{ post.image.url }}" alt="" />
+    <main class="main">
+            <div class="user_stories">
+                <h1>Schedule</h1>
+                <div class="user_image_area user_follower">
+                    <div class="following">
+                        {% for user_follow in user_following %}
+                        <div class="follow_data">
+                            <img class="following_data" src="{{ user_follow.following.image.url }}" alt=""/>
+                            <h3 class="following_data">
+                                <a href="/{{user_follow.following.username}}/">
+                                    {{user_follow.following.username}}
+                                </a>
+                            </h3>
                         </div>
-                        {% else %}
-                        <p>image none</p>
-                        {% endif %}
-                    </center>
+                        {% endfor %}
+                    </div>  
+                </div>
+            </div>
+            <div class="post_container">
+                <div class="post-area">
+                    {% for post in post_data %}
+                    <div class="post">
+                        <center>
+                            {% if post.image %}
+                            <div class="post-image_area">
+                                <img src="{{ post.image.url }}" alt="" />
+                            </div>
+                            {% else %}
+                            <p>image none</p>
+                            {% endif %}
+                        </center>
                         <div class="post_title">
                             <h2>{{ post.title }}</h2>
                         </div>
@@ -79,29 +102,35 @@
                         </div>
                         <div class="more_sea"><a href="{% url 'Megami_app:post_detail' post.id %}">もっと見る<i class="fas fa-angle-right"></i></a></div>
                         <div class="post_user ">
-                              <p class="post_data">
-                            {% if user.icon == null%}
-                                <img  class="icon-img" src="/media/{{ post.user.image }}">
-                            {% else %}
-                                <img src="{% static 'IMG/home_img/icons8-user-64.png' %}">
-                            {% endif %}{{ post.user }}</p>
-                            <p class="post_data date">{{ post.created_at|date }}</p>
-                            
+                            <div class="LikesIcon">
+                                <p class="post_data add_good">
+                                    {% if user.icon == null%}
+                                        <img  class="icon-img" src="/media/{{ post.user.image }}">
+                                    {% else %}
+                                        <img src="{% static 'IMG/home_img/icons8-user-64.png' %}">
+                                    {% endif %}{{ post.user }}</p>
+                                <i class="far fa-heart LikesIcon-fa-heart add_good"  id={{ post.id }}></i>
+                                <p class="post_data date">{{ post.created_at|date }}</p>
+                            </div>
                         </div>
                         <center>
                             <div class="user_line"></div>
                         </center>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
+
+                <stories class="stories">
+                    <div class="stories_menu">
+                        
+                    </div>
+                </stories>
+
+
+
             </div>
-            
-        </div>
     </main>
     
     
-   
-    <p><a href="{% url 'logout' %}">ログアウト</a></p>
-    <p><a href="{% url 'password_change' %}">パスワードの変更</a></p>
-    <p><a href="{% url 'password_reset' %}">パスワードを忘れた場合</a></p>
     <script type="text/javascript" src="{% static 'JS/home.js' %}"></script>
     {% endblock %}

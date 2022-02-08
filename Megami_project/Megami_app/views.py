@@ -4,15 +4,26 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .forms import PostForm
 from .models import Post
+from Megami_account.models import  Connection
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from django.urls import reverse
+from django.http import JsonResponse
+from django.views.generic.edit import CreateView
+
 class IndexView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
+        user = request.user
+        print(user.id)
         post_data = Post.objects.order_by('-id')
+        user_follower = Connection.objects.filter(following=user.id).all()
+        user_following = Connection.objects.filter(follower=user.id).all()
         return render(request, 'home.html',{
-            'post_data':post_data
+            'post_data':post_data,
+            'user_follower':user_follower,
+            'user_following':user_following
         })
 
 
@@ -91,3 +102,24 @@ class PostDeleteView(LoginRequiredMixin, View):
         post_data.delete()
         return redirect('home')
     
+
+# テスト
+class ArticleCreateView(CreateView):
+    model = Post
+    fields = ('title', )
+    
+    def get_success_url(self):
+        return reverse('article:article_list')
+
+def add_good_count_for_article(request):
+    article_id = request.POST.get('id')
+    user = request.user
+    article = Post.objects.get(id=article_id)
+
+    article.good_count += 1
+    article.save()
+    data = {
+        'id': article_id,
+        'good_count': article.good_count,
+    }
+    return JsonResponse(data)
