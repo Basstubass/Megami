@@ -38,6 +38,7 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 
 INSTALLED_APPS = [
     # 'registartion'
+    'channels',
     'Megami_account',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'Megami_app',
     'phonenumber_field',
     'anymail',
+    
 ]
 
 MIDDLEWARE = [
@@ -79,7 +81,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Megami_project.wsgi.application'
-
+ASGI_APPLICATION = 'Megami_project.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -130,7 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 
@@ -180,3 +182,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # DEFAULT_FROM_EMAIL = "tubasu@sample.com"
 # SERVER_EMAIL = "0130tubasa@gmail.com"
+ASGI_APPLICATION = 'Megami_project.asgi.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': { 'hosts': [('127.0.0.1', 6379)], },
+    },
+}

@@ -16,8 +16,11 @@ from django.views.generic.edit import CreateView
 class IndexView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         user = request.user
-        print(user.id)
-        post_data = Post.objects.order_by('-id')
+        action = request.GET.get('action')
+        if action == "new":
+            post_data = Post.objects.order_by('-id')
+        else: 
+            post_data = Post.objects.order_by('-good_count')
         user_follower = Connection.objects.filter(following=user.id).all()
         user_following = Connection.objects.filter(follower=user.id).all()
         return render(request, 'home.html',{
@@ -25,6 +28,14 @@ class IndexView(LoginRequiredMixin, View):
             'user_follower':user_follower,
             'user_following':user_following
         })
+
+
+# class VoteView(LoginRequiredMixin, View):
+#     def get(self, request, *args, **kwargs):
+
+
+
+
 
 
 class PostDetailView(View):
@@ -123,3 +134,7 @@ def add_good_count_for_article(request):
         'good_count': article.good_count,
     }
     return JsonResponse(data)
+
+
+def chat( request ):
+    return render( request, '' )

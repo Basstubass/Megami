@@ -70,7 +70,11 @@
                     <div class="following">
                         {% for user_follow in user_following %}
                         <div class="follow_data">
-                            <img class="following_data" src="{{ user_follow.following.image.url }}" alt=""/>
+                            {% if user_follow.following.image %}
+                                <img class="following_data" src="{{ user_follow.following.image.url }}" alt=""/>
+                            {% else %}
+                                <img class="following_data" src="{% static 'IMG/home_img/icons8-user-64.png' %}">
+                            {% endif %}
                             <h3 class="following_data">
                                 <a href="/{{user_follow.following.username}}/">
                                     {{user_follow.following.username}}
@@ -82,6 +86,15 @@
                 </div>
             </div>
             <div class="post_container">
+                <div class="post_sort">
+                    <form class="post_sort_form" method="GET" action="{% url 'home' %}">
+                        {% csrf_token %}
+                        <button type="submit" name="action" value="new">New</button>
+                        <br>
+                        <br>
+                        <button type="submit" name="action" value="popularity">Pop</button>
+                    </form>
+                </div>
                 <div class="post-area">
                     {% for post in post_data %}
                     <div class="post">
@@ -108,7 +121,8 @@
                                         <img  class="icon-img" src="/media/{{ post.user.image }}">
                                     {% else %}
                                         <img src="{% static 'IMG/home_img/icons8-user-64.png' %}">
-                                    {% endif %}{{ post.user }}</p>
+                                    {% endif %}
+                                    {{ post.user }}</p>
                                 <i class="far fa-heart LikesIcon-fa-heart add_good"  id={{ post.id }}></i>
                                 <p class="post_data date">{{ post.created_at|date }}</p>
                             </div>
@@ -120,17 +134,88 @@
                     {% endfor %}
                 </div>
 
-                <stories class="stories">
+                <Schedule class="stories action">
                     <div class="stories_menu">
+                        <i class="fas fa-times" id="x_icon1"></i>
                         
                     </div>
-                </stories>
+                </Schedule>
+
+
+
+
+                <chat class="chat">
+                    <div id="div_container">
+                        <h1>Chat</h1>
+                        <div id="div_main">
+                            <div id="div_join_screen">
+                                <!-- エンターキーによるボタン押下を行うために、<button>ではなく<form>と<input type="submit">を使用。
+                                ボタン押下(=submit)時にページリロードが行われないように、onsubmitの設定の最後に"return false;"を追加。-->
+                                <form action="" onsubmit="onsubmitButton_JoinChat(); return false;" class="chat_join_form" >
+                                    <div class="chat_user_name">
+                                        <h3>User name</h3>
+                                        <input type="text" id="input_username" placeholder="Enter User name" value="{{user.username}}" autofocus>
+                                    </div>
+                                    <div class="chat_room_name">
+                                        <h3>Room name</h3>
+                                        <input type="text" id="input_roomname" placeholder="Enter Room name">
+                                    </div>
+                                    <div class="help_message">
+                                        Room name must be a string containing only ASCII alphanumerics, hyphens, or periods.
+                                    </div>
+                                    <input type="submit" value="Join Chat" class="join_submit"/>
+                                </form>
+                            </div>
+                
+
+                            <div id="div_chat_screen">
+                                <button class="chat_button" onclick="onclickButton_LeaveChat()"><i class="fas fa-running"></i>Leave Chat</button>
+                                <div class="chat_user_name">
+                                    <h3>User</h3>
+                                    <input type="text" id="text_username" readonly="readonly">
+                                </div>
+                                <div class="chat_room_name">
+                                    <h3>Room</h3>
+                                    <input type="text" id="text_roomname" readonly="readonly">
+                                </div>
+                                <!-- エンターキーによるボタン押下を行うために、<button>ではなく<form>と<input type="submit">を使用。
+                                ボタン押下(=submit)時にページリロードが行われないように、onsubmitの設定の最後に"return false;"を追加。-->
+                                <form action="" onsubmit="onsubmitButton_Send(); return false;">
+                                    <div class="chat_message">
+                                        <h3>Message</h3>
+                                    </div>
+                                    <div class="chat_send">
+                                        <input type="text" id="input_message" maxlength="45" autocomplete="off" autofocus />
+                                        <input type="submit" value="Send" class="message_send"/>
+                                    </div>
+                                    
+                                </form>
+                
+                                <ul id="list_message">
+                                    <div class="user_div">
+
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </chat>
+
+
 
 
 
             </div>
     </main>
-    
-    
+
+
+
+    <!-- テスト -->
+
+
+    <!-- テスト -->
+
+
+
     <script type="text/javascript" src="{% static 'JS/home.js' %}"></script>
     {% endblock %}

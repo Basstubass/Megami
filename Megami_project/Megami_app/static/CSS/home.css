@@ -36,10 +36,10 @@
     .header-item{
         float: left;
     }
-    .icon_area_img{
+    /* .icon_area_img{
         /* padding-top:  20px;
-        padding-left: 20px; */
-    }
+        padding-left: 20px; 
+    } */
     .icon_area_img img{
         width:40px;
         height:40px;
@@ -185,6 +185,9 @@
     #x_icon{
         cursor: pointer;
     }
+    #x_icon1{
+        cursor: pointer;
+    }
     #account_icon{
         cursor: pointer;
     }
@@ -195,8 +198,6 @@
     }
     .post{
         margin-top: 10%;
-    }
-    .post_container{
     }
     .post-area{
         position: absolute;
@@ -247,6 +248,33 @@
         margin: 0;
 
     }
+    /* ポスト */
+    .post_sort{
+        position: relative;
+        left: 94%;
+        z-index: 10;
+        top: 10%;
+        
+    }
+    .post_sort_form{
+        position: absolute;
+        margin-top: 20px;
+        
+    }
+    .post_sort_form button{
+        border-radius: 30px;
+        background-color: #ffc65cf1;
+        font-family: 'Quattrocento', serif;
+        border: 1px;
+        border-color:rgba(253, 255, 122, 0.453);
+        font-size: 20px;
+
+    }
+
+
+
+
+
     .user_line{
         border-bottom: solid 2px #000000;
         width: 90%;
@@ -284,6 +312,7 @@
     }
     .user_stories h1{
         font-family: 'Quattrocento', serif;
+        font-size: 35px;
     }
     .user_follower{
         padding-left: 8%;
@@ -305,27 +334,46 @@
     }
     .following_data{
         display: inline;
+        cursor: pointer;
     }
     .follow_data{
         padding-top: 7%;
+        
     }
     .following_data a{
         text-decoration: none;
         color: #000000;
     }
+
     /* ストーリー */
     .stories{
         position: absolute;
-        top:10%;
-        left: 10%;
+        top: 120px;
+        left: 13%;
         z-index: 900;
+        opacity: 1;
+        transition: .5s;
+    }
+    .action{
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s;
+
     }
     .stories_menu{
-        height: 580px;
-        width: 430px;
+        height: 510px;
+        width: 360px;
         background-color: #fa8e00c4;
         border-radius: 15px;
+
     }
+    .stories_menu i{
+        padding: 5%;
+        cursor: pointer;
+    }
+
+
+    /*  */
     
 
 
@@ -366,6 +414,166 @@
         color: #e2264d;
         
       }
-     
+
+
+      .chat_join_form{
+          padding-top:10px;
+          padding-left: 50px;
+      }
+
+      .chat{
+        width: 500px;
+        position: absolute;
+        top: 400px;
+        padding-left: 60px;
+    }
+    .chat_button{
+        margin:15px;
+        font-size: 20px;
+        border-radius: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: 300;
+        font-family: 'Quattrocento', serif;
+        background-color: #ffc477c4;
+    }
+
+    #div_container h1{
+        font-family: 'Quattrocento', serif;
+        font-size: 35px;
+    }
+    .chat_user_name{
+        padding-bottom: 10px;
+    }
+    .chat_user_name h3{
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Quattrocento', serif;
+    }
+    #input_username{
+        margin-left: 7%;
+        border-radius: 15px;
+        border: 1px;
+        padding: 5px;
+        outline:#ffc477c4;
+    }
+    .chat_room_name{
+        padding-bottom: 10px;
+    }
+    .chat_room_name h3{
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Quattrocento', serif;
+    }
+    #input_roomname{
+        margin-left: 7%;
+        border-radius: 15px;
+        border: 1px;
+        padding: 5px;
+        outline:#ffc477c4;
+
+    }
+    .join_submit{
+        background-color: #ffc477c4;
+        border-radius: 30px;
+        border: 1px;
+        padding-top:3px;
+        padding-bottom:3px;
+        padding-left:10px;
+        padding-right:10px;
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+    #text_username{
+        margin-left: 7%;
+        border-radius: 15px;
+        border: 1px;
+        padding: 5px;
+        outline:#ffc477c4;
+        background-color: #ffc477c4;
+    }
+    #text_roomname{
+        margin-left: 7%;
+        border-radius: 15px;
+        border: 1px;
+        padding: 5px;
+        outline:#ffc477c4;
+        background-color: #ffc477c4;
+    }
+    .chat_message h3{
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Quattrocento', serif;
+    }
+    .chat_send{
+        margin-left: 7%;
+    }
+    #input_message{
+        border-radius: 10px;
+        padding: 5px;
+        border: 1px;
+        outline: #b36500c4;
+    }
+    .message_send{
+        background-color: #ffd298c4;
+        border-radius: 30px;
+        border: 1px;
+        padding-top:3px;
+        padding-bottom:3px;
+        padding-left:10px;
+        padding-right:10px;
+    }
+    #list_message{
+        margin-top:3%;
+        height: 400px;
+        overflow: scroll;
+        width: 400px;
+        background-color: #fdc887c4;
+        border-radius: 20px;
+    }
+
+
+
+    .div_chat_screen i{
+        font-size: 15px;
+    }
+     #div_chat_screen {
+        margin-top: 3%;
+        display: none;
+    }
+    #div_chat_screen button{
+        outline: none;
+        border: none;
+    }
+    #text_username{
+        outline: none;
+    }
+
+
+    #pearents{
+        margin-top: 5%;
+        position: relative;
+        width: 350px;
+    }
+    /* #user_message{
+        display: inline;
+    } */
+    .message_div{
+        padding-left: 7%;
+    }
+    .username_div{
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Quattrocento', serif;
+        /* background-color: #ffd991ad; */
+        border-radius: 20px;
+    }
+
+
+    
+    
+
+
 
 }
