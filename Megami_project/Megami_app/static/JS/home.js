@@ -5,6 +5,10 @@ let x_icon1 = document.getElementById("x_icon1");
 let action = document.querySelector(".action");
 let stories = document.querySelector(".stories");
 let following_data = document.querySelectorAll('.following_data');
+
+const myuser = document.querySelector('.myuser');
+my_username = myuser.textContent
+
 account_icon.addEventListener('click', function(){
     account.classList.remove("show");
 })
@@ -226,10 +230,6 @@ g_socket.onmessage = ( event ) =>
     pearents.prepend( elementLi_message );
     pearents.prepend(elementLi_user);
 
-
-    
-     // リストの一番上に追加
-
 };
 
 // WebSocketクローズ時の処理
@@ -247,3 +247,122 @@ chat_user_name[1].remove();
 // chat_room_name[1].remove();
 let user_div_li = document.querySelector('.message_send');
 
+
+
+
+///////////////////////////////////
+const Peer = window.Peer;
+
+function OnButtonClick(){
+    const local_stream = document.querySelector('.local-stream');
+    local_stream.classList.remove("show");
+
+    (async function main(){
+        const localVideo = document.getElementById('js-local-stream');
+        const joinTrigger = document.getElementById('js-join-trigger');
+        const leaveTrigger = document.getElementById('js-leave-trigger');
+        const remoteVideos = document.getElementById('js-remote-streams');
+        const roomId = document.getElementById('js-room-id');
+        const localText = document.getElementById('js-local-text');
+        const sendTrigger = document.getElementById('js-send-trigger');
+        const messages = document.getElementById('js-messages');
+    
+        const video_on = document.querySelector('.video_on'); 
+        const video_off = document.querySelector('.video_off')
+        video_on.classList.add("show");
+        video_off.classList.remove("show");
+        // video_on.addEventListener('click', ()=>{
+        //     screen_on = true;
+        // });
+            const localStream = await navigator.mediaDevices
+            .getUserMedia({
+                audio: true,
+                video: true,
+            })
+            .catch(console.error);
+    
+    
+        localVideo.method = true;
+        localVideo.srcObject = localStream;
+        localVideo.playsInline = true;
+        await localVideo.play().catch(console.error);
+    
+        const peer = (window.peer = new Peer({
+            key: '05ba2d45-025e-4dd5-b22a-4e6bc3687491',
+            debug: 3,
+        }));
+    
+        joinTrigger.addEventListener('click', () =>{
+            if (!peer.open){
+                return;
+            }
+    
+            const room = peer.joinRoom(roomId.value, {
+                mode: "mesh",
+                stream: localStream,
+            });
+    
+            room.once('open', () => {
+                messages.textContent += '=== You joined ===\n';
+            });
+    
+            room.on('peerJoin', peerId => {
+                messages.textContent += `=== ${peerId} joined ===\n`;
+            });
+    
+            room.on('stream', async stream => {
+                const newVideo = document.createElement('video');
+                newVideo.srcObject = stream;
+                newVideo.playsInline = true;
+                newVideo.setAttribute('data-peer-id', stream.peerId);
+                remoteVideos.append(newVideo);
+                await newVideo.play().catch(console.error);
+            });
+    
+            room.on('data', ({data, src}) => {
+                messages.textContent += `${src}: ${data}\n`;
+            });
+    
+            room.on('peerLeave', peerId => {
+                const remoteVideo = remoteVideos.querySelector(
+                    `[data-peer-id="${peerId}]`
+                );
+                remoteVideo.srcObject.getTracks().forEach(track => track.stop());
+                remoteVideo.srcObject = null;
+                remoteVideo.remove();
+    
+                messages.textContent += ` ${peerId} left \n`;
+            });
+    
+            room.once('close', () => {
+                sendTrigger.removeEventListener('click', onClickSend);
+                messages.textContent += ' You left \n';
+                Array.form(remoteVideos.children).forEach(remoteVideo => {
+                    remoteVideo.srcObject.getTracks().forEach(track => track.stop());
+                    remoteVideo.srcObject = null;
+                    remoteVideo.remove();
+                });
+            });
+    
+            sendTrigger.addEventListener('click', onClickSend);
+            leaveTrigger.addEventListener('click', ()=> room.close(), { once: true});
+    
+            function onClickSend() {
+                room.send(localText.value);
+    
+                messages.textContent += `${peer.id}: ${localText.value}\n`;
+                localText.value = '';
+            }
+        });
+        peer.on('error', console.error);
+    })();
+}
+
+function OffButtonClick(){
+    setTimeout("location.reload()",2000);
+}
+    
+
+   
+
+//////////////////////////////////

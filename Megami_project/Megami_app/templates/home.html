@@ -40,7 +40,7 @@
                             <p>{{user.last_name}}</p>
                         </div>
                         <div class="username">
-                            <p>{{user.username}}</p>
+                            <p class="myuser">{{user.username}}</p>
                         </div>
                         <div class="email">
                             <h3>Email:</h3>
@@ -134,14 +134,13 @@
                     {% endfor %}
                 </div>
 
-                <Schedule class="stories action">
+                <Schedule class="stories action" >
+                    <i class="fas fa-times" id="x_icon1"></i>
                     <div class="stories_menu">
-                        <i class="fas fa-times" id="x_icon1"></i>
                         
+                        <video id="video" autoplay></video>
                     </div>
                 </Schedule>
-
-
 
 
                 <chat class="chat">
@@ -167,7 +166,6 @@
                                 </form>
                             </div>
                 
-
                             <div id="div_chat_screen">
                                 <button class="chat_button" onclick="onclickButton_LeaveChat()"><i class="fas fa-running"></i>Leave Chat</button>
                                 <div class="chat_user_name">
@@ -202,8 +200,32 @@
                 </chat>
 
 
-
-
+                <video_chats class="video_chats">
+                    <div class="container">
+                        <h1 class="heading">Meeting</h1>
+                        <div class="room">
+                            <div>
+                                <div id="local-stream">
+                                    <video id="js-local-stream" class="local-stream show"></video>
+                                </div>
+                                <button class="video_on" onclick="OnButtonClick();">Start</button>
+                                <button class="video_off show" onclick="OffButtonClick();">Stop</button>
+                                    
+                                <div class="room_inout">
+                                    <input type="text" placeholder="Room Name" id="js-room-id">
+                                <button id="js-join-trigger">Join</button>
+                                <button id="js-leave-trigger">Leave</button>
+                                </div>
+                            </div>
+                            <div class="remote-streams" id="js-remote-streams"></div>
+                            <div class="remote_message">
+                                <pre class="messages" id="js-messages"></pre>
+                                <input type="text" id="js-local-text">
+                                <button id="js-send-trigger">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </video_chats>
 
             </div>
     </main>
@@ -213,9 +235,11 @@
     <!-- テスト -->
 
 
+
+    
     <!-- テスト -->
+    
 
-
-
+    <script src="https://cdn.webrtc.ecl.ntt.com/skyway-4.4.3.js"></script>
     <script type="text/javascript" src="{% static 'JS/home.js' %}"></script>
     {% endblock %}

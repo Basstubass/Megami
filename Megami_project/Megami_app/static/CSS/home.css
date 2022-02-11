@@ -179,14 +179,17 @@
         padding-left: 8px;
     }
     .show{
-        visibility: hidden;
         opacity: 0;
+        display: none;
     }
     #x_icon{
         cursor: pointer;
     }
     #x_icon1{
         cursor: pointer;
+        position:absolute;
+        z-index:888;
+        margin: 5%;
     }
     #account_icon{
         cursor: pointer;
@@ -251,14 +254,13 @@
     /* ポスト */
     .post_sort{
         position: relative;
-        left: 94%;
         z-index: 10;
         top: 10%;
-        
     }
     .post_sort_form{
         position: absolute;
         margin-top: 20px;
+        left: 94%;
         
     }
     .post_sort_form button{
@@ -328,6 +330,7 @@
     .following img{
         width: 50px;
         height: 50px;
+
         border: 2px solid rgb(87, 87, 87);
         border-radius:50%;
         padding:2px;
@@ -524,12 +527,14 @@
         padding-right:10px;
     }
     #list_message{
+        position: absolute;
         margin-top:3%;
         height: 400px;
         overflow: scroll;
         width: 400px;
-        background-color: #fdc887c4;
+        background-color: #fcc179f1;
         border-radius: 20px;
+        z-index: 500;
     }
 
 
@@ -571,9 +576,73 @@
     }
 
 
-    
-    
+    .video_chats{
+        width: 500px;
+        position: absolute;
+        top: 810px;
+        z-index: 300;
+    }
+    .heading{
+        font-family: 'Quattrocento', serif;
+        font-size: 35px;
+    }
+    .room video{
+        width: 400px;
+        height: 300px;
+        -webkit-transform: scaleX(-1); 
+    }
+    .container{
+        padding-left: 60px;
+    }
+    .room{
+        padding-top: 5%;
+        /* margin-left: 58px; */
+    }
+    .room_inout{
+        margin-left: 58px;
+    }
+    .room button{
+        border-radius: 30px;
+        border: 1px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+    .video_on{
+        margin-bottom: 10px;
+        margin-left: 170px;
+        background-color: #88fd4ec4;
 
+    }
+    .video_off{
+        margin-bottom: 10px;
+        margin-left: 170px;
+        background-color: #fc8357e2;
+    }
+    .remote_message{
+        margin-left: 58px;
+    }
+    #js-room-id{
+        border-radius: 15px;
+        border: 1px;
+        padding: 5px;
+    }
+    #js-local-text{
+        border-radius: 15px;
+        border: 1px;
+        padding: 5px;
+    }
+    #js-join-trigger{
+        background-color: #ffc477c4;
+    }
+    #js-leave-trigger{
+        background-color: #ffc477c4;
+    }
+    #js-send-trigger{
+        background-color: #ffc477c4;
+
+    }
 
 
 }
