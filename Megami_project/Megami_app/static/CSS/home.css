@@ -370,16 +370,15 @@
         border-radius: 15px;
 
     }
+    .stories_menu h3{
+        padding-top: 30%;
+        padding-left: 20%;
+    }
+
     .stories_menu i{
         padding: 5%;
         cursor: pointer;
     }
-
-
-    /*  */
-    
-
-
 
     
     @keyframes heartAnimation {
@@ -409,13 +408,17 @@
         font-size: 17px;
         cursor: pointer;
         user-select: none;
+        position: absolute;
+        margin-top: 5px;
       }
       .LikesIcon-fa-heart.heart{
         /* heartAnimationアニメーションを200ミリ秒かけて実行する */
         animation: heartAnimation .2s;
         /* アイコン色を黒から赤へ変更する */
-        color: #e2264d;
-        
+        color: #e2264d; 
+      }
+      .add_good{
+          display: inline;
       }
 
 

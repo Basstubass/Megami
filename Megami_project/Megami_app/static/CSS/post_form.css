@@ -193,6 +193,17 @@
       }
     /* テスト */
 
+    .return_home{
+      text-align: center;
+      margin-top: 2%;
+    }
+
+    .return_home a{
+      color: rgba(70, 70, 70, 0.638);
+      text-decoration:none; 
+      font-size: 15px;
+    }
+
 
 
 

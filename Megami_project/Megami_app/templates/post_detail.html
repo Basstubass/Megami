@@ -3,23 +3,46 @@
 {% extends "base.html" %}
 {% load static %}
     {% block style %}
-        <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+        <link rel="stylesheet" href="{% static 'CSS/post_detaile.css' %}">
     {% endblock %}
     {% block content %}
-    <h2 class="my-4">{{ post_data.title }}</h2>
-<hr />
-<p>{{ post_data.created }} by {{ post_data.user }}</p>
-<hr />
-{% if post_data.image %}
-<img class="rounded detail-img" src="{{ post_data.image.url }}" alt="" />
-{% endif %}
-<hr />
-<p>{{ post_data.content|linebreaksbr }}</p>
-{% if user.is_authenticated %}
-<hr />
-<div class="d-flex mb-5">
-  <a class="btn btn-warning mr-2" href="{% url 'Megami_app:post_edit' post_data.id %}">編集する</a>
-  <a class="btn btn-danger" href="{% url 'Megami_app:post_delete' post_data.id %}">削除する</a>
-</div>
-{% endif %}
+    <header>
+      <div class="header">
+          <div class="header-menu">
+              <h1 class="megami-logo header-item"><a href=" {% url 'home' %} " class="logo">Megami</a></h1>
+          </div>
+        </div>
+    </header>
+    <div class="post_detaile">
+      <div class="post_data">
+        {% if post_data.image %}
+          <img class="rounded detail-img" src="{{ post_data.image.url }}" alt="" />
+        {% endif %}
+        <div class="post_title">
+          <h2>{{ post_data.title }}</h2>
+        </div>
+        <div class="post_pro">
+          <p>{{ post_data.content|linebreaksbr }}</p>
+          {% if user.icon == null%}
+            <img  class="icon-img" src="/media/{{ post_data.user.image }}">
+          {% else %}
+            <img class="icon-img" src="{% static 'IMG/home_img/icons8-user-64.png' %}">
+          {% endif %}
+            <p class="icon-img post_user_pro">{{ post_data.user }}</p>
+        </div>
+
+        {% if post_data.user == user %}
+        <div class="user_detaile_button">
+          <a class="btn btn-warning" href="{% url 'Megami_app:post_edit' post_data.id %}">編集する</a>
+          <a class="btn btn-danger" href="{% url 'Megami_app:post_delete' post_data.id %}">削除する</a>
+        </div>
+        {% endif %}
+
+        <div class="return_home">
+          <a href="/">戻る<i class="fa fa-solid fa-angle-right"></i></a>
+        </div>
+        
+      </div>
+    </div>
+
 {% endblock %}

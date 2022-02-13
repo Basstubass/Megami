@@ -1,14 +1,39 @@
 {% extends "base.html" %}
 {% load static %}
     {% block style %}
-        <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+        <link rel="stylesheet" href="{% static 'CSS/post_delete.css' %}">
     {% endblock %}
 {% block content %}
-<h2>{{post_data.title}}</h2>
+<header>
+    <div class="header">
+        <div class="header-menu">
+            <h1 class="megami-logo header-item"><a href=" {% url 'home' %} " class="logo">Megami</a></h1>
+        </div>
+      </div>
+  </header>
 
-<h5 class="">削除してもよろしいですか</h5>
-<form method="post">
-    {% csrf_token %}
-    <button class="" type="submit">削除</button>
-</form>
+<div class="post_detaile">
+    <div class="post_data">
+      {% if post_data.image %}
+        <img class="rounded detail-img" src="{{ post_data.image.url }}" alt="" />
+      {% endif %}
+      <div class="post_title">
+        <h2>{{ post_data.title }}</h2>
+      </div>
+      <div class="post_pro">
+        <p>{{ post_data.content|linebreaksbr }}</p>
+      </div>
+
+      <h5 class="">削除してもよろしいですか</h5>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-danger delet_button" type="submit">削除</button>
+        </form>
+
+      <div class="return_home">
+        <a href="/">戻る<i class="fa fa-solid fa-angle-right"></i></a>
+      </div>
+      
+    </div>
+  </div>
 {% endblock %}

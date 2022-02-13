@@ -114,18 +114,18 @@
                             <p>{{ post.content|truncatechars:100 }}</p>
                         </div>
                         <div class="more_sea"><a href="{% url 'Megami_app:post_detail' post.id %}">もっと見る<i class="fas fa-angle-right"></i></a></div>
-                        <div class="post_user ">
-                            <div class="LikesIcon">
-                                <p class="post_data add_good">
-                                    {% if user.icon == null%}
-                                        <img  class="icon-img" src="/media/{{ post.user.image }}">
-                                    {% else %}
-                                        <img src="{% static 'IMG/home_img/icons8-user-64.png' %}">
-                                    {% endif %}
-                                    {{ post.user }}</p>
-                                <i class="far fa-heart LikesIcon-fa-heart add_good"  id={{ post.id }}></i>
-                                <p class="post_data date">{{ post.created_at|date }}</p>
+                        <div class="post_user">
+                            <p class="post_data add_good">
+                                {% if user.icon == null%}
+                                    <img  class="icon-img" src="/media/{{ post.user.image }}">
+                                {% else %}
+                                    <img src="{% static 'IMG/home_img/icons8-user-64.png' %}">
+                                {% endif %}
+                                {{ post.user }}</p>
+                            <div class="LikesIcon add_good">
+                                <i class="far fa-heart LikesIcon-fa-heart"  id={{ post.id }}></i>
                             </div>
+                            <p class="post_data date">{{ post.created_at|date }}</p>
                         </div>
                         <center>
                             <div class="user_line"></div>
@@ -137,8 +137,7 @@
                 <Schedule class="stories action" >
                     <i class="fas fa-times" id="x_icon1"></i>
                     <div class="stories_menu">
-                        
-                        <video id="video" autoplay></video>
+                        <h3>comming soon</h3>
                     </div>
                 </Schedule>
 
