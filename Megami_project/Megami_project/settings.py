@@ -38,7 +38,7 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 
 INSTALLED_APPS = [
     # 'registartion'
-    'channels',
+    
     'Megami_account',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,9 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Megami_app',
-    'phonenumber_field',
     'anymail',
-    
+    'channels',
 ]
 
 MIDDLEWARE = [

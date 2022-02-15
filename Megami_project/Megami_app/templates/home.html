@@ -71,9 +71,9 @@
                         {% for user_follow in user_following %}
                         <div class="follow_data">
                             {% if user_follow.following.image %}
-                                <img class="following_data" src="{{ user_follow.following.image.url }}" alt=""/>
+                                <img class="following_data" id={{user_follow.following.id}} src="{{ user_follow.following.image.url }}" alt=""/>
                             {% else %}
-                                <img class="following_data" src="{% static 'IMG/home_img/icons8-user-64.png' %}">
+                                <img class="following_data" id={{user_follow.following.id}} src="{% static 'IMG/home_img/icons8-user-64.png' %}">
                             {% endif %}
                             <h3 class="following_data">
                                 <a href="/{{user_follow.following.username}}/">
@@ -115,7 +115,7 @@
                         </div>
                         <div class="more_sea"><a href="{% url 'Megami_app:post_detail' post.id %}">もっと見る<i class="fas fa-angle-right"></i></a></div>
                         <div class="post_user">
-                            <p class="post_data add_good">
+                            <p class="post_data">
                                 {% if user.icon == null%}
                                     <img  class="icon-img" src="/media/{{ post.user.image }}">
                                 {% else %}
@@ -123,7 +123,7 @@
                                 {% endif %}
                                 {{ post.user }}</p>
                             <div class="LikesIcon add_good">
-                                <i class="far fa-heart LikesIcon-fa-heart"  id={{ post.id }}></i>
+                                <i class="far fa-heart LikesIcon-fa-heart" id={{ post.id }}></i>
                             </div>
                             <p class="post_data date">{{ post.created_at|date }}</p>
                         </div>
@@ -137,7 +137,7 @@
                 <Schedule class="stories action" >
                     <i class="fas fa-times" id="x_icon1"></i>
                     <div class="stories_menu">
-                        <h3>comming soon</h3>
+                        
                     </div>
                 </Schedule>
 
@@ -233,7 +233,9 @@
 
     <!-- テスト -->
 
+    <div class="test">
 
+    </div>
 
     
     <!-- テスト -->

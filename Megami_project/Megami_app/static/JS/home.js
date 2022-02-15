@@ -86,7 +86,7 @@ $.ajaxSetup({
 
 
 
-$('.add_good').on('click', function(e) {
+$('.LikesIcon-fa-heart').on('click', function(e) {
     article_id = $(this).attr("id");
     $.ajax({
         'url': 'change/',
@@ -96,14 +96,28 @@ $('.add_good').on('click', function(e) {
         },
         'dataType': 'json'
 
-    }).done( response => {
-        const response_id = response.id;
-        const good_count = response.good_count;
-        const element = '#good-count-' + response_id;
-        $(element).text(good_count);
-    });
-
+    })
 });
+
+$('.following_data').on('click', function(e){
+    followuser_id = $(this).attr("id");
+    $('.following_dat').append()
+})
+
+
+    
+
+// $('.following_data').on('click', function(e) {
+//     followuser_id = $(this).attr("id");
+//     $.ajax({
+//         'url': '',
+//         'type': 'GET',
+//         'data': {
+//             'id': followuser_id,
+//         },
+//         'dataType': 'json'
+//     })
+// })
 
 
 

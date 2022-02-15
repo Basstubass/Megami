@@ -44,7 +44,7 @@ urlpatterns = [
     path('<slug:username>/unfollow', views.unfollow_view, name='unfollow'),
     # path('post/<int:pk>',views.PostDetailView.as_view(), name="post_detail")
     
-    
+    # path('followuser/', views.followuser, name='followuser'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

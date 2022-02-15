@@ -115,16 +115,15 @@ class PostDeleteView(LoginRequiredMixin, View):
     
 
 # テスト
-class ArticleCreateView(CreateView):
-    model = Post
-    fields = ('title', )
+# class ArticleCreateView(CreateView):
+#     model = Post
+#     fields = ('title', )
     
-    def get_success_url(self):
-        return reverse('article:article_list')
+#     def get_success_url(self):
+#         return reverse('article:article_list')
 
 def add_good_count_for_article(request):
     article_id = request.POST.get('id')
-    user = request.user
     article = Post.objects.get(id=article_id)
 
     article.good_count += 1

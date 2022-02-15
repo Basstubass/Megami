@@ -8,7 +8,7 @@ from .models import User,Connection
 
 from django.views.generic import DetailView
 from django.urls import reverse_lazy
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect,JsonResponse
 from django.contrib import messages
 from django.views.generic import View
 from .helpers import get_current_user
@@ -34,7 +34,6 @@ class ActivateView(TemplateView):
 class ProfileEditView(LoginRequiredMixin, FormView):
     def get(self, request, *args, **kwargs):
         user_data = User.objects.get(id=request.user.id)
-
         form = ProfileForm(
             request.POST or None,
             initial={
@@ -138,6 +137,7 @@ def unfollow_view(request, *args, **kwargs):
         messages.warning(request, 'あなたは{0}をフォローしませんでした'.format(following.username))
 
     return HttpResponseRedirect(reverse_lazy('detail', kwargs={'username': following.username}))
+
 
 
 
