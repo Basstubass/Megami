@@ -72,7 +72,7 @@ class ProifileDetail(LoginRequiredMixin, DetailView):
     model = User
     template_name = 'detail.html'
     #slug_field = urls.pyに渡すモデルのフィールド名
-    slug_field = 'username'
+    slug_field = ('username')
     # urls.pyでのキーワードの名前
     slug_url_kwarg = 'username'
 

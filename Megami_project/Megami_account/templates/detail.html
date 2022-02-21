@@ -1,26 +1,56 @@
-<div class="button_field">
 
-    <!--もしプロフィールの遷移先が自分のプロフィールである場合の表示ボタン-->
-    {% if user.username == username %}
-　　　　 <!--プロフィールの遷移先が自分がフォローしているユーザーの場合の表示ボタン-->
-    {% elif connected %}
-        <a href="{% url 'unfollow' username %}" class="btn btn-dark">フォロー解除</a>
-    <!--自分がフォローしていないユーザーの場合の表示ボタン-->
-    {% else %}
-        <a href="{% url 'follow' username %}" class="btn btn-light">フォロー</a>
-    {% endif %}
 
-</div>
+{% extends "base.html" %}
+{% load static %}
+    {% block style %}
+        <link rel="stylesheet" href="{% static 'CSS/detail.css' %}">
+    {% endblock %}
+{% block content %}
+<header>
+    <div class="header">
+        <div class="header-menu">
+            <h1 class="megami-logo header-item"><a href=" {% url 'home' %} " class="logo">Megami</a></h1>
+        </div>
+      </div>
+  </header>
 
-<div class="follow_count">
-    <ul>
-        <li>
-              <!--フォロー数を表示-->
-            <p>フォロー数</p><h2>{{ following }}</h2>
-        </li>
-        <li>
-            <!--フォロワー数を表示-->
-            <p>フォロワー数</p><h2>{{ follower }}</h2>
-        </li>
-    </ul>
-</div>
+<main class="main">
+    <div class="user_account">
+        <div class="user">
+            {% if user.image %}
+                <img class="following_user"src="{{ image.url }}" alt=""/>
+            {% else %}
+                <img class="following_user"src="{% static 'IMG/home_img/icons8-user-64.png' %}">
+            {% endif %}
+            <p>{{username}}</p>
+            <ul class="follow_ul">
+                <li class="following_li">
+                    <p class="following">{{ following }}</p>
+                    <p class="following">follow</p>
+                   
+                </li>
+                <li class="follower_li">
+                    <p class="follower">{{ follower }}</p>
+                    <p class="follower">follower</p>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="follow_count">
+        
+    </div>
+    <div class="button_field">
+        <!--もしプロフィールの遷移先が自分のプロフィールである場合の表示ボタン-->
+        {% if user.username == username %}
+        <!--プロフィールの遷移先が自分がフォローしているユーザーの場合の表示ボタン-->
+        {% elif connected %}
+            <a href="{% url 'unfollow' username %}" class="btn btn-dark">フォロー解除</a>
+        <!--自分がフォローしていないユーザーの場合の表示ボタン-->
+        {% else %}
+            <a href="{% url 'follow' username %}" class="btn btn-light">フォロー</a>
+        {% endif %}
+    </div>
+  </main>
+
+{% endblock %}
