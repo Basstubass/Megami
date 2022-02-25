@@ -4,17 +4,1572 @@
 @media screen and (min-width:480px) and (max-width:599px) { 
     
    }
-     
+
+@media screen and (min-width:600px) and (max-width:669px) { 
+    .header{
+        background-color: #FFA500;
+        height: 480px;
+    }
+    .header-item{
+        float: left;
+    }
+    .megami-logo{
+        margin: 0;
+        padding-top: 30px;
+        margin-left: 13%;
+        font-family: 'Quattrocento', serif;
+        font-size: 26px;
+        color: #000;
+    }
+    a {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color:white;
+        text-decoration: none;
+        }
+    .logo{
+        color: #000;
+    }
+    .signin-button{
+        padding-top: 20px;
+        position: relative;
+        left: 50%;
+    }
+    .login-btn {
+        outline: none;
+        cursor: pointer;
+        border: none;
+        padding: 0.8rem 1.2rem;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.05rem;
+        border-radius: 500px;
+        overflow: hidden;
+        background: #66ff66;
+        color: ghostwhite;
+    }
+       
+    .login-btn span {
+        position: relative;
+        z-index: 10;
+        transition: color 0.4s;
+    }
+       
+    .login-btn:hover span {
+        color: black;
+    }
+       
+    .login-btn::before,
+    .login-btn::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+    .login-btn::before {
+        content: "";
+        background: #000;
+        width: 120%;
+        left: -10%;
+        transform: skew(30deg);
+        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+       }
+       
+    .login-btn:hover::before {
+        transform: translate3d(100%, 0, 0);
+    }
+    .signin-message{
+        padding-top: 19%;
+    }
+    .signin-message{
+        font-family: 'PT Serif', serif;
+        font-size: 25px;
+        width: 400px;
+    }
+
+
+
+    .main {
+        background-color: rgba(255, 255, 255, 0.5);
+        height: 300px;
+        width: 220px;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+   .connect-message{
+        transform: translateX(-100px);
+        transition: 2s;
+        opacity : 0;
+   }
+   
+   #connect-message{
+        margin: 0;
+   }
+
+   .using-message{
+    transform: translateY(-100px);
+    transition: 2s;
+    opacity : 0;
+   }
+
+   #using-message{
+       margin: 0;
+       margin-left: 15%;
+   }
+   .btn{
+       margin-top: 13%;
+   }
+   .audience{
+       position: relative;
+       top: 25%;
+       left: 13%;
+   }
+   .audience-area{
+       position: absolute;
+       
+   }
+
+   .back_img-area{
+       position: absolute;
+       width: 300px;
+       height: 800px;
+       left: 34%;
+       top: 13%;
+    }
+
+   #Megami_img{
+       position: absolute;
+       width: 280px;
+   }
+   
+   #JK_img{
+       position: absolute;
+       width: 160px;
+       top: 13%;
+       left: 55%;
+       margin-left: 30%;
+       margin-top: 20px;
+   }
+   
+   .Login{
+       position: relative;
+       left: 55%;
+       top: 25%;
+   }
+   .login-area{
+       position: absolute;
+       z-index: 99;
+       
+       border-radius: 5%;
+   }
+
+   .login-icon{
+       margin-left: 8%;
+       margin-top: 5%;
+   }
+   .login-icon p{
+       font-size: 20px;
+   }
+
+
+   .sign {
+    padding-top: 28px;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    }
+
+    .un {
+        width: 55%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 3px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0,.5);
+        text-align: center;
+        font-family: 'Ubuntu', sans-serif;
+        }   
+
+    form.form1 {
+        padding-top:  28px;
+    }
+
+    .pass {
+        width: 55%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 3px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0,.5);
+        text-align: center;
+        margin-bottom: 15px;
+        font-family: 'Ubuntu', sans-serif;
+        }
+
+
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    }
+
+    .login{
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: black;
+        padding-top: 15px;
+    }
+
+    .concept{
+        height: 370px;
+        max-width: 1080px;
+        background-color: #EF682E;
+        position: relative;
+        opacity : 0;
+        transform: translateY(-100px);
+        transition: opacity 3s;
+    }
+    .salon-con{
+        opacity : 0;
+        transition: opacity 3s;
+    }
+    .user-con{
+        opacity : 0;
+        transition: opacity 4s;
+    }
+    .stylist-con{
+        opacity : 0;
+        transition: opacity 5s;
+    }
+    .concept-message{
+        font-family: 'PT Serif', serif;
+        padding-top: 8%;
+        padding-left: 8%;
+        transform: translateX(-100px);
+        transition: 2s;
+        opacity : 0;
+        font-size: 25px;
+    }
+
+    .concept-container{
+        padding-top: 2%;
+        padding-left: 15%;
+    }
+    .concept-container p{
+        font-size: 25px;
+        padding-top: 3%;
+    }
+
+    .conect-img{
+        position: absolute;
+        left: 55%;
+        transform: translateY(100px);
+        transition: 2s;
+        opacity : 0;
+        width: 250px;
+    }
+    .show{
+        opacity: 1;
+        transform: none;
+    }
+
+
+
+    .Ability{
+        height: 400px;
+        max-width: 1080px;
+        background-color: #FCCBB7;
+        position: relative;
+        opacity : 0;
+        transform: translateY(-100px);
+        transition: opacity 2s;
+    }
+    .concept.view{
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    .Ability.view{
+        opacity: 1;
+        transform: none;
+    }
+    .Ability-message{
+        font-family: 'PT Serif', serif;
+        padding-top: 6%;
+        transform: translateY(-100px);
+        transition: 2s;
+        opacity : 0;
+    }
+    .Ability-message.view{
+        opacity: 1;
+        transform: none;
+    }
+
+    .Ability{
+        position: relative;
+    }
+
+    .Ability-img1{
+        position: absolute;
+        width: 250px;
+        left: 0;
+        
+    }
+    .Ability-img2{
+        position: absolute;
+        width: 230px;
+        top: 25%;
+        left: 63%;
+
+    }
+    .Ability-container{
+        margin-top: 8%;
+        font-size: 22px;
+    }
+    .Ability-container p{
+        padding-top: 2%;
+        
+    }
+    .stylist-user{
+        transform: translateY(-200px);
+        transition: 2s;
+        opacity : 0;
+    }
+    .salon-user{
+        transform: translateX(-200px);
+        transition: 3s;
+        opacity : 0;
+    }
+    .stylist-salon{
+        transform: translateY(100px);
+        transition: 3s;
+        opacity : 0;
+    }
+    .view{
+        opacity: 1;
+        transform: none;
+    }
+
+
+    .errorlist {
+        font-size: 10px;
+        list-style: none;
+        left: 8%;
+        top: 27%;
+        padding:0;
+        position: absolute;
+        z-index: 10;
+        background-color: rgba(255, 128, 128, .8);
+        height: 40px;
+        width: 250px;
+        border-radius: 5px;
+        border: solid 1px red;
+        /* visibility:hidden; */
+    }
+    .errorlist li{
+        padding-top: 4px;
+    }
+
+
+
+
+
+}
+
+@media screen and (min-width:670px) and (max-width:880px){
+    .header{
+        background-color: #FFA500;
+        height: 500px;
+    }
+    .header-item{
+        float: left;
+    }
+    .megami-logo{
+        margin: 0;
+        padding-top: 30px;
+        margin-left: 10%;
+        font-family: 'Quattrocento', serif;
+        font-size: 26px;
+        color: #000;
+    }
+    a {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color:white;
+        text-decoration: none;
+        }
+    .logo{
+        color: #000;
+    }
+    .signin-button{
+        padding-top: 20px;
+        position: relative;
+        left: 58%;
+    }
+    .login-btn {
+        outline: none;
+        cursor: pointer;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.05rem;
+        border-radius: 500px;
+        overflow: hidden;
+        background: #66ff66;
+        color: ghostwhite;
+    }
+       
+    .login-btn span {
+        position: relative;
+        z-index: 10;
+        transition: color 0.4s;
+    }
+       
+    .login-btn:hover span {
+        color: black;
+    }
+       
+    .login-btn::before,
+    .login-btn::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+    .login-btn::before {
+        content: "";
+        background: #000;
+        width: 120%;
+        left: -10%;
+        transform: skew(30deg);
+        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+       }
+       
+    .login-btn:hover::before {
+        transform: translate3d(100%, 0, 0);
+    }
+    .signin-message{
+        padding-top: 19%;
+    }
+    .signin-message{
+        font-family: 'PT Serif', serif;
+        font-size: 25px;
+        width: 400px;
+    }
+
+
+
+    .main {
+        background-color: rgba(255, 255, 255, 0.5);
+        height: 300px;
+        width: 220px;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+   .connect-message{
+        transform: translateX(-100px);
+        transition: 2s;
+        opacity : 0;
+   }
+   
+   #connect-message{
+        margin: 0;
+   }
+
+   .using-message{
+    transform: translateY(-100px);
+    transition: 2s;
+    opacity : 0;
+   }
+
+   #using-message{
+       margin: 0;
+       margin-left: 15%;
+   }
+   .btn{
+       margin-top: 13%;
+   }
+   .audience{
+       position: relative;
+       top: 25%;
+       left: 13%;
+   }
+   .audience-area{
+       position: absolute;
+       
+   }
+
+   .back_img-area{
+       position: absolute;
+       height: 800px;
+       left: 40%;
+       top: 12%;
+    }
+
+   #Megami_img{
+       /* position: absolute; */
+       width: 300px;
+   }
+   
+   #JK_img{
+       position: absolute;
+       width: 200px;
+       top: 10%;
+       left: 55%;
+       margin-left: 20%;
+       margin-top:20px;
+   }
+   
+   .Login{
+       position: relative;
+       left: 56%;
+       top: 22%;
+   }
+   .login-area{
+       position: absolute;
+       z-index: 99;
+       
+       border-radius: 5%;
+   }
+
+   .login-icon{
+       margin-left: 8%;
+       margin-top: 5%;
+   }
+   .login-icon p{
+       font-size: 20px;
+   }
+
+
+   .sign {
+    padding-top: 28px;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    }
+
+    .un {
+        width: 55%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 3px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0,.5);
+        text-align: center;
+        font-family: 'Ubuntu', sans-serif;
+        }   
+
+    form.form1 {
+        padding-top:  28px;
+    }
+
+    .pass {
+        width: 55%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 3px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0,.5);
+        text-align: center;
+        margin-bottom: 15px;
+        font-family: 'Ubuntu', sans-serif;
+        }
+
+
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    }
+
+    .login{
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: black;
+        padding-top: 15px;
+    }
+
+    .concept{
+        height: 480px;
+        max-width: 1080px;
+        background-color: #EF682E;
+        position: relative;
+        opacity : 0;
+        transform: translateY(-100px);
+        transition: opacity 3s;
+    }
+    .salon-con{
+        opacity : 0;
+        transition: opacity 3s;
+    }
+    .user-con{
+        opacity : 0;
+        transition: opacity 4s;
+    }
+    .stylist-con{
+        opacity : 0;
+        transition: opacity 5s;
+    }
+    .concept-message{
+        font-family: 'PT Serif', serif;
+        padding-top: 8%;
+        padding-left: 8%;
+        transform: translateX(-100px);
+        transition: 2s;
+        opacity : 0;
+        font-size: 25px;
+    }
+
+    .concept-container{
+        padding-top: 2%;
+        padding-left: 15%;
+    }
+    .concept-container p{
+        font-size: 25px;
+        padding-top: 3%;
+    }
+
+    .conect-img{
+        position: absolute;
+        width: 350px;
+        left: 55%;
+        transform: translateY(100px);
+        transition: 2s;
+        opacity : 0;
+        width: 300px;
+    }
+    .show{
+        opacity: 1;
+        transform: none;
+    }
+
+
+    .Ability{
+        height: 400px;
+        max-width: 1080px;
+        background-color: #FCCBB7;
+        position: relative;
+        opacity : 0;
+        transform: translateY(-100px);
+        transition: opacity 2s;
+    }
+    .concept.view{
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    .Ability.view{
+        opacity: 1;
+        transform: none;
+    }
+    .Ability-message{
+        font-family: 'PT Serif', serif;
+        padding-top: 6%;
+        transform: translateY(-100px);
+        transition: 2s;
+        opacity : 0;
+    }
+    .Ability-message.view{
+        opacity: 1;
+        transform: none;
+    }
+
+    .Ability{
+        position: relative;
+    }
+
+    .Ability-img1{
+        position: absolute;
+        width: 300px;
+        left: 0;
+        
+    }
+    .Ability-img2{
+        position: absolute;
+        width: 250px;
+        top: 25%;
+        left: 63%;
+
+    }
+    .Ability-container{
+        margin-top: 8%;
+        font-size: 22px;
+    }
+    .Ability-container p{
+        padding-top: 2%;
+        font-weight: 15px;
+        
+    }
+    .stylist-user{
+        transform: translateY(-200px);
+        transition: 2s;
+        opacity : 0;
+    }
+    .salon-user{
+        transform: translateX(-200px);
+        transition: 3s;
+        opacity : 0;
+    }
+    .stylist-salon{
+        transform: translateY(100px);
+        transition: 3s;
+        opacity : 0;
+    }
+    .view{
+        opacity: 1;
+        transform: none;
+    }
+
+
+    .errorlist {
+        font-size: 10px;
+        list-style: none;
+        left: 8%;
+        top: 27%;
+        padding:0;
+        position: absolute;
+        z-index: 10;
+        background-color: rgba(255, 128, 128, .8);
+        height: 40px;
+        width: 250px;
+        border-radius: 5px;
+        border: solid 1px red;
+        /* visibility:hidden; */
+    }
+    .errorlist li{
+        padding-top: 4px;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
    /* 600px〜959px：タブレット
    ------------------------------ */
-   @media screen and (min-width:600px) and (max-width:959px) {
-    
+   @media screen and (min-width:880px) and (max-width:959px) {
+    .header{
+        background-color: #FFA500;
+        height: 550px;
+    }
+    .header-item{
+        float: left;
+    }
+    .megami-logo{
+        margin: 0;
+        padding-top: 30px;
+        padding-left: 10%;
+        font-family: 'Quattrocento', serif;
+        font-size: 26px;
+        color: #000;
+    }
+    a {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color:white;
+        text-decoration: none;
+        }
+    .logo{
+        color: #000;
+    }
+    .signin-button{
+        padding-top: 20px;
+        position: relative;
+        left: 64%;
+    }
+    .login-btn {
+        outline: none;
+        cursor: pointer;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.05rem;
+        border-radius: 500px;
+        overflow: hidden;
+        background: #66ff66;
+        color: ghostwhite;
+    }
+       
+    .login-btn span {
+        position: relative;
+        z-index: 10;
+        transition: color 0.4s;
+    }
+       
+    .login-btn:hover span {
+        color: black;
+    }
+       
+    .login-btn::before,
+    .login-btn::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+    .login-btn::before {
+        content: "";
+        background: #000;
+        width: 120%;
+        left: -10%;
+        transform: skew(30deg);
+        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+       }
+       
+    .login-btn:hover::before {
+        transform: translate3d(100%, 0, 0);
+    }
+    .signin-message{
+        padding-top: 19%;
+    }
+    .signin-message{
+        font-family: 'PT Serif', serif;
+        font-size: 25px;
+        width: 400px;
+    }
+
+    .main {
+        background-color: rgba(255, 255, 255, 0.5);
+        height: 350px;
+        width: 270px;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+   .connect-message{
+    transform: translateX(-100px);
+    transition: 2s;
+    opacity : 0;
+   }
+   
+   #connect-message{
+    margin: 0;
+   }
+
+   .using-message{
+    transform: translateY(-100px);
+    transition: 2s;
+    opacity : 0;
+   }
+
+   #using-message{
+       margin: 0;
+       margin-left: 15%;
+   }
+   .btn{
+       margin-top: 13%;
+   }
+
+
+   .audience{
+       position: relative;
+       top: 25%;
+       left: 13%;
+   }
+   .audience-area{
+       position: absolute;
+       
+   }
+
+   .back_img-area{
+       position: absolute;
+       width: 500px;
+       height: 800px;
+       left: 40%;
+       top: 10%;
+    }
+
+   #Megami_img{
+       position: absolute;
+       width: 390px;
+   }
+   
+   #JK_img{
+       position: absolute;
+       width: 290px;
+       top: 10%;
+       left: 60%;
+   }
+   
+   .Login{
+       position: relative;
+       left: 58%;
+       top: 22%;
+   }
+   .login-area{
+       position: absolute;
+       z-index: 99;
+       
+       border-radius: 5%;
+   }
+
+   .login-icon{
+       margin-left: 8%;
+       margin-top: 5%;
+   }
+   .login-icon p{
+       font-size: 20px;
+   }
+
+
+   .sign {
+    padding-top: 40px;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    }
+
+    .un {
+        width: 55%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 5px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0,.5);
+        text-align: center;
+        font-family: 'Ubuntu', sans-serif;
+        }   
+
+    form.form1 {
+        padding-top: 40px;
+    }
+
+    .pass {
+        width: 55%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 5px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0,.5);
+        text-align: center;
+        margin-bottom: 15px;
+        font-family: 'Ubuntu', sans-serif;
+        }
+
+
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    }
+
+    .login{
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: black;
+        padding-top: 15px;
+    }
+
+    .concept{
+        height: 550px;
+        max-width: 1080px;
+        background-color: #EF682E;
+        position: relative;
+        opacity : 0;
+        transform: translateY(-100px);
+        transition: opacity 3s;
+    }
+    .salon-con{
+        opacity : 0;
+        transition: opacity 3s;
+    }
+    .user-con{
+        opacity : 0;
+        transition: opacity 4s;
+    }
+    .stylist-con{
+        opacity : 0;
+        transition: opacity 5s;
+    }
+    .concept-message{
+        font-family: 'PT Serif', serif;
+        padding-top: 8%;
+        padding-left: 8%;
+        transform: translateX(-100px);
+        transition: 2s;
+        opacity : 0;
+    }
+
+    .concept-container{
+        padding-top: 2%;
+        padding-left: 15%;
+    }
+    .concept-container p{
+        font-size: 30px;
+        padding-top: 3%;
+    }
+
+    .conect-img{
+        position: absolute;
+        width: 350px;
+        left: 55%;
+        transform: translateY(100px);
+        transition: 2s;
+        opacity : 0;
+    }
+    .show{
+        opacity: 1;
+        transform: none;
+    }
+
+
+    .Ability{
+        height: 550px;
+        max-width: 1080px;
+        background-color: #FCCBB7;
+        position: relative;
+        opacity : 0;
+        transform: translateY(-100px);
+        transition: opacity 2s;
+    }
+    .concept.view{
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    .Ability.view{
+        opacity: 1;
+        transform: none;
+    }
+    .Ability-message{
+        font-family: 'PT Serif', serif;
+        padding-top: 6%;
+        transform: translateY(-100px);
+        transition: 2s;
+        opacity : 0;
+    }
+    .Ability-message.view{
+        opacity: 1;
+        transform: none;
+    }
+
+    .Ability{
+        position: relative;
+    }
+
+    .Ability-img1{
+        position: absolute;
+        width: 400px;
+        left: 0;
+        
+    }
+    .Ability-img2{
+        position: absolute;
+        width: 350px;
+        top: 25%;
+        left: 63%;
+
+    }
+    .Ability-container{
+        margin-top: 8%;
+        font-size: 22px;
+    }
+    .Ability-container p{
+        padding-top: 2%;
+        padding-left: 7%;
+    }
+    .stylist-user{
+        transform: translateY(-200px);
+        transition: 2s;
+        opacity : 0;
+    }
+    .salon-user{
+        transform: translateX(-200px);
+        transition: 3s;
+        opacity : 0;
+    }
+    .stylist-salon{
+        transform: translateY(100px);
+        transition: 3s;
+        opacity : 0;
+    }
+    .view{
+        opacity: 1;
+        transform: none;
+    }
+
+
+    .errorlist {
+        font-size: 10px;
+        list-style: none;
+        left: 8%;
+        top: 27%;
+        padding:0;
+        position: absolute;
+        z-index: 10;
+        background-color: rgba(255, 128, 128, .8);
+        height: 40px;
+        width: 250px;
+        border-radius: 5px;
+        border: solid 1px red;
+        /* visibility:hidden; */
+    }
+    .errorlist li{
+        padding-top: 4px;
+    }
+
+
+
+
    }
      
    /* 960px〜1279px：小型PC
    ------------------------------ */
-   @media screen and (min-width:960px) and (max-width:1080px) {
-   
+   @media screen and ( min-width:960px  ) and (max-width:1079px) {
+        .header{
+            background-color: #FFA500;
+            height: 550px;
+        }
+        .header-item{
+            float: left;
+        }
+        .megami-logo{
+            margin: 0;
+            padding-top: 30px;
+            padding-left: 9%;
+            font-family: 'Quattrocento', serif;
+            font-size: 26px;
+            color: #000;
+        }
+        a {
+            text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+            color:white;
+            text-decoration: none;
+            }
+        .logo{
+            color: #000;
+        }
+        .signin-button{
+            padding-top: 20px;
+            position: relative;
+            left: 67%;
+        }
+        .login-btn {
+            outline: none;
+            cursor: pointer;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 0.05rem;
+            border-radius: 500px;
+            overflow: hidden;
+            background: #66ff66;
+            color: ghostwhite;
+        }
+           
+        .login-btn span {
+            position: relative;
+            z-index: 10;
+            transition: color 0.4s;
+        }
+           
+        .login-btn:hover span {
+            color: black;
+        }
+           
+        .login-btn::before,
+        .login-btn::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .login-btn::before {
+            content: "";
+            background: #000;
+            width: 120%;
+            left: -10%;
+            transform: skew(30deg);
+            transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+           }
+           
+        .login-btn:hover::before {
+            transform: translate3d(100%, 0, 0);
+        }
+        .signin-message{
+            padding-top: 19%;
+        }
+        .signin-message{
+            font-family: 'PT Serif', serif;
+            font-size: 25px;
+            width: 400px;
+        }
+
+        .main {
+            background-color: rgba(255, 255, 255, 0.5);
+            height: 350px;
+            width: 270px;
+            border-radius: 1.5em;
+            box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        }
+       .connect-message{
+        transform: translateX(-100px);
+        transition: 2s;
+        opacity : 0;
+       }
+       
+       #connect-message{
+        margin: 0;
+       }
+
+       .using-message{
+        transform: translateY(-100px);
+        transition: 2s;
+        opacity : 0;
+       }
+
+       #using-message{
+           margin: 0;
+           margin-left: 15%;
+       }
+       .btn{
+           margin-top: 13%;
+       }
+
+
+       .audience{
+           position: relative;
+           top: 25%;
+           left: 13%;
+       }
+       .audience-area{
+           position: absolute;
+           
+       }
+
+       .back_img-area{
+           position: absolute;
+           width: 500px;
+           height: 800px;
+           left: 40%;
+           top: 15%;
+        }
+
+       #Megami_img{
+           position: absolute;
+           width: 390px;
+       }
+       
+       #JK_img{
+           position: absolute;
+           width: 290px;
+           top: 10%;
+           left: 60%;
+       }
+       
+       .Login{
+           position: relative;
+           left: 58%;
+           top: 22%;
+       }
+       .login-area{
+           position: absolute;
+           z-index: 99;
+           
+           border-radius: 5%;
+       }
+    
+       .login-icon{
+           margin-left: 8%;
+           margin-top: 5%;
+       }
+       .login-icon p{
+           font-size: 20px;
+       }
+
+
+       .sign {
+        padding-top: 40px;
+        color: black;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        font-size: 23px;
+    }
+    
+    .un {
+        width: 55%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 5px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0,.5);
+        text-align: center;
+        font-family: 'Ubuntu', sans-serif;
+        }   
+    
+    form.form1 {
+        padding-top: 40px;
+    }
+    
+    .pass {
+        width: 55%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 5px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0,.5);
+        text-align: center;
+        margin-bottom: 15px;
+        font-family: 'Ubuntu', sans-serif;
+        }
+    
+    
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    }
+    
+    .login{
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: black;
+        padding-top: 15px;
+    }
+
+    .concept{
+        height: 550px;
+        max-width: 1080px;
+        background-color: #EF682E;
+        position: relative;
+        opacity : 0;
+        transform: translateY(-100px);
+        transition: opacity 3s;
+    }
+    .salon-con{
+        opacity : 0;
+        transition: opacity 3s;
+    }
+    .user-con{
+        opacity : 0;
+        transition: opacity 4s;
+    }
+    .stylist-con{
+        opacity : 0;
+        transition: opacity 5s;
+    }
+    .concept-message{
+        font-family: 'PT Serif', serif;
+        padding-top: 8%;
+        padding-left: 8%;
+        transform: translateX(-100px);
+        transition: 2s;
+        opacity : 0;
+    }
+    
+    .concept-container{
+        padding-top: 2%;
+        padding-left: 15%;
+    }
+    .concept-container p{
+        font-size: 30px;
+        padding-top: 3%;
+    }
+    
+    .conect-img{
+        position: absolute;
+        width: 350px;
+        left: 55%;
+        transform: translateY(100px);
+        transition: 2s;
+        opacity : 0;
+    }
+    .show{
+        opacity: 1;
+        transform: none;
+    }
+
+
+    .Ability{
+        height: 550px;
+        max-width: 1080px;
+        background-color: #FCCBB7;
+        position: relative;
+        opacity : 0;
+        transform: translateY(-100px);
+        transition: opacity 2s;
+    }
+    .concept.view{
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    .Ability.view{
+        opacity: 1;
+        transform: none;
+    }
+    .Ability-message{
+        font-family: 'PT Serif', serif;
+        padding-top: 6%;
+        transform: translateY(-100px);
+        transition: 2s;
+        opacity : 0;
+    }
+    .Ability-message.view{
+        opacity: 1;
+        transform: none;
+    }
+
+    .Ability{
+        position: relative;
+    }
+
+    .Ability-img1{
+        position: absolute;
+        width: 400px;
+        left: 0;
+        
+    }
+    .Ability-img2{
+        position: absolute;
+        width: 380px;
+        top: 25%;
+        left: 65%;
+
+    }
+    .Ability-container{
+        margin-top: 8%;
+        font-size: 30px;
+    }
+    .Ability-container p{
+        padding-top: 2%;
+    }
+    .stylist-user{
+        transform: translateY(-200px);
+        transition: 2s;
+        opacity : 0;
+    }
+    .salon-user{
+        transform: translateX(-200px);
+        transition: 3s;
+        opacity : 0;
+    }
+    .stylist-salon{
+        transform: translateY(100px);
+        transition: 3s;
+        opacity : 0;
+    }
+    .view{
+        opacity: 1;
+        transform: none;
+    }
+
+
+    .errorlist {
+        font-size: 10px;
+        list-style: none;
+        left: 8%;
+        top: 27%;
+        padding:0;
+        position: absolute;
+        z-index: 10;
+        background-color: rgba(255, 128, 128, .8);
+        height: 40px;
+        width: 250px;
+        border-radius: 5px;
+        border: solid 1px red;
+        /* visibility:hidden; */
+    }
+    .errorlist li{
+        padding-top: 4px;
+    }
+
+        
+           
    }
      
    /* 1280px〜：大型PC
@@ -102,9 +1657,7 @@
        .signin-message{
            padding-top: 19%;
        }
-       .audience-area{
-        padding-left: 10%;
-       }
+       
        .signin-message{
         font-family: 'PT Serif', serif;
         font-size: 25px;
@@ -133,7 +1686,7 @@
        .btn{
            margin-top: 13%;
        }
-       #Megami_img{
+       /* #Megami_img{
            position: absolute;
            width: 400px;
        }
@@ -142,22 +1695,45 @@
            width: 300px;
            padding-top: 10%;
            margin-left: 35%;
+       } */
+
+
+    .back_img-area{
+        position: absolute;
+        width: 600px;
+        height: 900px;
+        left: 43%;
+        top: 15%;
+     }
+
+    #Megami_img{
+        position: absolute;
+        width: 400px;
+    }
+    
+    #JK_img{
+        position: absolute;
+        width: 300px;
+        top: 10%;
+        left: 58%;
+    }
+       .audience{
+           position: relative;
+           top: 25%;
+           left: 13%;
        }
        .audience-area{
            position: absolute;
-           top: 15%;
        }
-       .back_img-area{
-           top: 25%;
+
+       .Login{
            position: relative;
-           left: 10%;
+           left: 60%;
+           top: 22%;
        }
-    
        .login-area{
            position: absolute;
            z-index: 99;
-           left: 55%;
-           top: 10%;
            border-radius: 5%;
        }
     
@@ -168,10 +1744,6 @@
        .login-icon p{
            font-size: 20px;
        }
-
-
-
-
 
 .main {
     background-color: rgba(255, 255, 255, 0.5);
@@ -386,7 +1958,7 @@ a {
     padding-top: 2%;
 }
 .stylist-user{
-    transform: translateX(200px);
+    transform: translateY(-200px);
     transition: 2s;
     opacity : 0;
 }

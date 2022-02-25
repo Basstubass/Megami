@@ -12,20 +12,24 @@
                     <button class="login-btn" onclick="location.href='/signup/'" > <span>Signin</span> </button>
                 </div>
             </div>
-            <div class="audience-area">
-                <div class="signin-message">
-                    <h2 id="connect-message" class="connect-message">Let's connect ! !</h2>
-                    <h2 id="using-message" class="using-message">using Megami</h2>
+            <audience-area class="audience">
+                <div class="audience-area">
+                    <div class="signin-message">
+                        <h2 id="connect-message" class="connect-message">Let's connect ! !</h2>
+                        <h2 id="using-message" class="using-message">using Megami</h2>
+                    </div>
+                    <div class="btn">
+                        <button class="login-btn" onclick="location.href='/signup/'"> <span>Get started</span> </button>
+                    </div>
                 </div>
-                <div class="btn">
-                    <button class="login-btn" onclick="location.href='/signup/'"> <span>Get started</span> </button>
-                </div>
-            </div>
-                <div class="back_img-area audience-area">
+            </audience-area>
+            
+                <div class="back_img-area">
                     <img src="{% static 'IMG/index_img/1544004869.png' %}" id="Megami_img" alt="Megami" >
                     <img src="{% static 'IMG/index_img/1544163788-1.png' %}" id="JK_img" alt="JK" >
                 </div>
-
+            
+            <Login class="Login">
             <div class="login-area">
                 <div class="main">
                     <p class="sign" align="center">Login</p>
@@ -40,6 +44,7 @@
                     </center>      
                 </div>
             </div>
+            </Login>
         </div>
     </header>
     <concept>
