@@ -63,4 +63,7 @@
     .follower{
         display: inline;
     }
+    .button_field a{
+        text-align: center;
+    }
 }

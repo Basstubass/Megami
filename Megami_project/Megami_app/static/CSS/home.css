@@ -660,3 +660,634 @@
 
 
 }
+@media screen and (min-width:1080px) {
+    
+    body{
+        margin: 0;
+        padding: 0;
+        max-width: 1080px;
+        margin-left:auto;    /* 左側マージンを自動的に空ける */
+        margin-right:auto;   /* 右側マージンを自動的に空ける */     /* 中身を左側表示に戻す */
+    }
+    .header{
+        height: 100px;
+        max-width: 1080px;
+        background-color: #FFA500;
+        border-bottom: 1px solid black;
+    }
+    .header-item{
+        float: left;
+    }
+    /* .icon_area_img{
+        /* padding-top:  20px;
+        padding-left: 20px; 
+    } */
+    .icon_area_img img{
+        width:40px;
+        height:40px;
+        display:inline-block;
+        border:1px solid rgb(55, 55, 55);
+        border-radius:50%;
+        padding:2px;
+    }
+
+    .megami-logo{
+        margin: 0;
+        padding-top: 30px;
+        padding-left: 7%;
+        font-family: 'Quattrocento', serif;
+        font-size: 25px;        /* position: relative; */
+    }
+    .megami-logo a{
+        color: black;
+        text-decoration: none;
+    }
+    .header-account_menu{
+        position: relative;
+    }
+    .header-account_menu h2{
+        position: absolute;
+        left: 90%;
+        top: 30px;
+    }
+    .header-account_menu p{
+        position: absolute;
+        left: 86%;
+        top: 36px;
+        font-size: 20px;
+        color: rgb(153, 117, 250);
+    }
+
+
+    .main{
+        height: 1500px;
+        max-width: 1080px;
+        background-color: #FFA500;
+    }
+
+    .account{
+        position:relative;
+        left: 63%;
+        top: 45px;
+        opacity: 1; 
+    }
+    .profile-aria{
+        position:absolute;
+        z-index: 900;
+        height: 400px;
+        width: 300px;
+        z-index: 100;
+        border-radius: 10px;
+        background-color: rgba(221, 218, 218, .9);
+        box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+
+    }
+    .profile h2{
+        font-size: 20px;
+        text-align: center;
+        padding-top: 5%;
+    }
+    .profile i{
+        position:absolute;
+        top: 2%;
+        left: 91%;
+    }
+    
+    .icon_area{
+        padding-top:  20px;
+        padding-left: 20px;
+    }
+    .icon_area img{
+        width:85px;
+        height: 85px;
+        display:inline-block;
+        border:2px solid black;
+        border-radius:50%;
+        padding:2px;
+    }
+    .fast-name{
+        position: absolute;
+        top: 20%;
+        left: 40%;
+    }
+    .fast-name p{
+        display: inline;
+        font-size: 25px;
+    }
+    .username{
+        position: absolute;
+        top: 30%;
+        left: 45%;
+    }
+    .username p{
+        font-size: 20px;
+    }
+    .email{
+        padding-top: 6%;
+        padding-left: 10%;
+    }
+    .email h3{
+        font-size: 20px;
+        font-weight: 50;
+    }
+    .email p{
+        position: absolute;
+        top: 43%;
+        left: 30%;
+    }
+    .introduction{
+        padding-left: 10%;
+    }
+    .introduction h3{
+        font-size: 20px;
+        font-weight: 50;
+    }
+    .comment_container{
+        padding:5px;
+        height: 130px;
+        width: 240px;
+        font-weight: bold;
+        background: #FFF;
+        border: solid 3px #e4d26d;/*線*/
+        border-radius: 10px;/*角の丸み*/
+    }
+    .change_account{
+        padding-left: 55%;
+        padding-top:2%;
+    }
+    .change_account a{
+        color:black;
+        text-decoration: none;
+        padding-left: 8px;
+    }
+    .show{
+        opacity: 0;
+        display: none;
+    }
+    #x_icon{
+        cursor: pointer;
+    }
+    #x_icon1{
+        cursor: pointer;
+        position:absolute;
+        z-index:888;
+        margin: 5%;
+    }
+    #account_icon{
+        cursor: pointer;
+    }
+
+    /* main */
+    .main{
+        position: relative;
+    }
+    .post{
+        margin-top: 10%;
+    }
+    .post-area{
+        position: absolute;
+        left: 49%;
+        height: auto;
+        width: 500px;
+        height: 1400px;
+        overflow: scroll;
+        
+     }
+    .post-image_area{
+        background-color:#ffc65cf1;
+        border-radius: 5px;
+        width: 450px;
+    }
+    .post-image_area img{
+        width: 380px;
+        border-radius: 10px;
+
+    }
+    .post_title{
+        position:relative;
+        margin-top: 4%;
+    }
+    .post_title h2{
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        font-family: 'Quattrocento', serif;
+    }
+    .post_content{
+        width: 400px;
+        margin-left: 10%;
+        margin-top:4%;
+    }
+    .more_sea{
+        margin-left: 80%;
+    }
+    .more_sea a{
+        text-decoration: none;
+        font-size: 12px;
+        color: rgba(79, 78, 78, 0.9);
+    }
+    .post_user{
+        margin-left: 10%;
+    }
+    .post_user p{
+        margin: 0;
+
+    }
+    /* ポスト */
+    .post_sort{
+        position: relative;
+        z-index: 10;
+        top: 10%;
+    }
+    .post_sort_form{
+        position: absolute;
+        margin-top: 20px;
+        left: 94%;
+        
+    }
+    .post_sort_form button{
+        border-radius: 30px;
+        background-color: #ffc65cf1;
+        font-family: 'Quattrocento', serif;
+        border: 1px;
+        border-color:rgba(253, 255, 122, 0.453);
+        font-size: 20px;
+
+    }
+
+
+
+
+
+    .user_line{
+        border-bottom: solid 2px #000000;
+        width: 90%;
+    }
+    .icon-img{
+        width:20px;
+        height: 20px;
+        display:inline-block;
+        border:.8px solid rgb(75, 75, 75);
+        border-radius:50%;
+        padding:1px;
+        background-color: #6f6f6fa6;
+        margin-bottom: 3px;
+    }
+    .post_data{
+        display: inline;
+        font-family: 'Quattrocento', serif;
+    }
+    .date{
+        font-size: 15px;
+        left: 40%;
+        position: relative;
+    }
+
+    .add_good{
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .user_stories{
+        width: 400px;
+        position: absolute;
+        padding-top: 50px;
+        padding-left: 60px;
+    }
+    .user_stories h1{
+        font-family: 'Quattrocento', serif;
+        font-size: 35px;
+    }
+    .user_follower{
+        padding-left: 8%;
+        height: 300px;
+        overflow: scroll;
+    }
+    .following h3{
+        font-size: 25px;
+        font-weight: 500;
+        padding-left:5px;
+        font-family: 'Quattrocento', serif;
+    }
+    .following img{
+        width: 50px;
+        height: 50px;
+
+        border: 2px solid rgb(87, 87, 87);
+        border-radius:50%;
+        padding:2px;
+    }
+    .following_data{
+        display: inline;
+        cursor: pointer;
+    }
+    .follow_data{
+        padding-top: 7%;
+        
+    }
+    .following_data a{
+        text-decoration: none;
+        color: #000000;
+    }
+
+    /* ストーリー */
+    .stories{
+        position: absolute;
+        top: 120px;
+        left: 13%;
+        z-index: 900;
+        opacity: 1;
+        transition: .5s;
+    }
+    .action{
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s;
+
+    }
+    .stories_menu{
+        height: 510px;
+        width: 360px;
+        background-color: #fa8e00c4;
+        border-radius: 15px;
+
+    }
+    .stories_menu h3{
+        padding-top: 30%;
+        padding-left: 20%;
+    }
+
+    .stories_menu i{
+        padding: 5%;
+        cursor: pointer;
+    }
+
+    
+    @keyframes heartAnimation {
+        0% {
+          /* アイコンサイズをもとのより小さくする */
+          transform: scale(0.5);
+        }
+        10% {
+          transform: scale(0.7);
+        }
+        30% {
+          transform: scale(0.9);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        80% {
+          transform: scale(1.5);
+        }
+        100% {
+          /* もとのサイズに戻す */
+          transform: scale(1.0);
+        }
+      }
+
+      .LikesIcon-fa-heart{
+        font-size: 17px;
+        cursor: pointer;
+        user-select: none;
+        position: absolute;
+        margin-top: 5px;
+      }
+      .LikesIcon-fa-heart.heart{
+        /* heartAnimationアニメーションを200ミリ秒かけて実行する */
+        animation: heartAnimation .2s;
+        /* アイコン色を黒から赤へ変更する */
+        color: #e2264d; 
+      }
+      .add_good{
+          display: inline;
+      }
+
+
+      .chat_join_form{
+          padding-top:10px;
+          padding-left: 50px;
+      }
+
+      .chat{
+        width: 500px;
+        position: absolute;
+        top: 400px;
+        padding-left: 60px;
+    }
+    .chat_button{
+        margin:15px;
+        font-size: 20px;
+        border-radius: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: 300;
+        font-family: 'Quattrocento', serif;
+        background-color: #ffc477c4;
+    }
+
+    #div_container h1{
+        font-family: 'Quattrocento', serif;
+        font-size: 35px;
+    }
+    .chat_user_name{
+        padding-bottom: 10px;
+    }
+    .chat_user_name h3{
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Quattrocento', serif;
+    }
+    #input_username{
+        margin-left: 7%;
+        border-radius: 15px;
+        border: 1px;
+        padding: 5px;
+        outline:#ffc477c4;
+    }
+    .chat_room_name{
+        padding-bottom: 10px;
+    }
+    .chat_room_name h3{
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Quattrocento', serif;
+    }
+    #input_roomname{
+        margin-left: 7%;
+        border-radius: 15px;
+        border: 1px;
+        padding: 5px;
+        outline:#ffc477c4;
+
+    }
+    .join_submit{
+        background-color: #ffc477c4;
+        border-radius: 30px;
+        border: 1px;
+        padding-top:3px;
+        padding-bottom:3px;
+        padding-left:10px;
+        padding-right:10px;
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+    #text_username{
+        margin-left: 7%;
+        border-radius: 15px;
+        border: 1px;
+        padding: 5px;
+        outline:#ffc477c4;
+        background-color: #ffc477c4;
+    }
+    #text_roomname{
+        margin-left: 7%;
+        border-radius: 15px;
+        border: 1px;
+        padding: 5px;
+        outline:#ffc477c4;
+        background-color: #ffc477c4;
+    }
+    .chat_message h3{
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Quattrocento', serif;
+    }
+    .chat_send{
+        margin-left: 7%;
+    }
+    #input_message{
+        border-radius: 10px;
+        padding: 5px;
+        border: 1px;
+        outline: #b36500c4;
+    }
+    .message_send{
+        background-color: #ffd298c4;
+        border-radius: 30px;
+        border: 1px;
+        padding-top:3px;
+        padding-bottom:3px;
+        padding-left:10px;
+        padding-right:10px;
+    }
+    #list_message{
+        position: absolute;
+        margin-top:3%;
+        height: 400px;
+        overflow: scroll;
+        width: 400px;
+        background-color: #fcc179f1;
+        border-radius: 20px;
+        z-index: 500;
+    }
+
+
+
+    .div_chat_screen i{
+        font-size: 15px;
+    }
+     #div_chat_screen {
+        margin-top: 3%;
+        display: none;
+    }
+    #div_chat_screen button{
+        outline: none;
+        border: none;
+    }
+    #text_username{
+        outline: none;
+    }
+
+
+    #pearents{
+        margin-top: 5%;
+        position: relative;
+        width: 350px;
+    }
+    /* #user_message{
+        display: inline;
+    } */
+    .message_div{
+        padding-left: 7%;
+    }
+    .username_div{
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Quattrocento', serif;
+        /* background-color: #ffd991ad; */
+        border-radius: 20px;
+    }
+
+
+    .video_chats{
+        width: 500px;
+        position: absolute;
+        top: 810px;
+        z-index: 300;
+    }
+    .heading{
+        font-family: 'Quattrocento', serif;
+        font-size: 35px;
+    }
+    .room video{
+        width: 400px;
+        height: 300px;
+        -webkit-transform: scaleX(-1); 
+    }
+    .container{
+        padding-left: 60px;
+    }
+    .room{
+        padding-top: 5%;
+        /* margin-left: 58px; */
+    }
+    .room_inout{
+        margin-left: 58px;
+    }
+    .room button{
+        border-radius: 30px;
+        border: 1px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+    .video_on{
+        margin-bottom: 10px;
+        margin-left: 170px;
+        background-color: #88fd4ec4;
+
+    }
+    .video_off{
+        margin-bottom: 10px;
+        margin-left: 170px;
+        background-color: #fc8357e2;
+    }
+    .remote_message{
+        margin-left: 58px;
+    }
+    #js-room-id{
+        border-radius: 15px;
+        border: 1px;
+        padding: 5px;
+    }
+    #js-local-text{
+        border-radius: 15px;
+        border: 1px;
+        padding: 5px;
+    }
+    #js-join-trigger{
+        background-color: #ffc477c4;
+    }
+    #js-leave-trigger{
+        background-color: #ffc477c4;
+    }
+    #js-send-trigger{
+        background-color: #ffc477c4;
+
+    }
+
+
+}
